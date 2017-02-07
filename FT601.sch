@@ -1,0 +1,386 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:sdr
+LIBS:usb-type-c
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 3 3
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L FT601 U1
+U 1 1 5896CA85
+P 3700 4600
+F 0 "U1" H 4000 4550 60  0000 C CNN
+F 1 "FT601" H 4350 4550 60  0000 C CNN
+F 2 "sdr-foots:QFN_76" H 4100 8400 60  0001 C CNN
+F 3 "" H 4100 8400 60  0001 C CNN
+	1    3700 4600
+	1    0    0    -1  
+$EndComp
+$Comp
+L USB3_microB X1
+U 1 1 5897F157
+P 1150 2950
+F 0 "X1" H 1250 3000 60  0000 C CNN
+F 1 "GSB443133HR" H 1450 1900 60  0000 C CNN
+F 2 "sdr-foots:USB3_microB" H 1800 3050 60  0001 C CNN
+F 3 "" H 1800 3050 60  0001 C CNN
+	1    1150 2950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Ferrite_Bead L?
+U 1 1 5898037D
+P 1700 2650
+F 0 "L?" V 1550 2675 50  0000 C CNN
+F 1 "Ferrite_Bead" V 1850 2650 50  0000 C CNN
+F 2 "" V 1630 2650 50  0000 C CNN
+F 3 "" H 1700 2650 50  0000 C CNN
+	1    1700 2650
+	-1   0    0    1   
+$EndComp
+Text GLabel 1350 2300 0    60   Input ~ 0
+VUSB
+$Comp
+L ESD7016 U?
+U 1 1 58980AD2
+P 1600 1050
+F 0 "U?" H 1250 1050 60  0000 C CNN
+F 1 "ESD7016" H 1350 100 60  0000 C CNN
+F 2 "sdr-foots:ESD7016" H 1600 1050 60  0001 C CNN
+F 3 "" H 1600 1050 60  0001 C CNN
+	1    1600 1050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1700 2500 1700 2300
+Wire Wire Line
+	1700 2300 1350 2300
+Wire Wire Line
+	1550 3150 3500 3150
+Wire Wire Line
+	1550 3250 3500 3250
+$Comp
+L C C?
+U 1 1 58980F98
+P 2150 3350
+F 0 "C?" H 2175 3450 50  0000 L CNN
+F 1 "0.1u" H 2175 3250 50  0000 L CNN
+F 2 "" H 2188 3200 50  0000 C CNN
+F 3 "" H 2150 3350 50  0000 C CNN
+	1    2150 3350
+	0    1    1    0   
+$EndComp
+$Comp
+L C C?
+U 1 1 58981018
+P 2900 3450
+F 0 "C?" H 2925 3550 50  0000 L CNN
+F 1 "0.1u" H 2925 3350 50  0000 L CNN
+F 2 "" H 2938 3300 50  0000 C CNN
+F 3 "" H 2900 3450 50  0000 C CNN
+	1    2900 3450
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3500 3450 3050 3450
+Wire Wire Line
+	3500 3350 2300 3350
+Wire Wire Line
+	2000 3350 1800 3350
+Wire Wire Line
+	1800 3350 1800 3450
+Wire Wire Line
+	1800 3450 1550 3450
+Wire Wire Line
+	1550 3550 2550 3550
+Wire Wire Line
+	2550 3550 2550 3450
+Wire Wire Line
+	2550 3450 2750 3450
+Wire Wire Line
+	1550 3750 3150 3750
+Wire Wire Line
+	3150 3750 3150 3550
+Wire Wire Line
+	3150 3550 3500 3550
+Wire Wire Line
+	3500 3650 3250 3650
+Wire Wire Line
+	3250 3650 3250 3850
+Wire Wire Line
+	3250 3850 1550 3850
+$Comp
+L GNDD #PWR?
+U 1 1 58981141
+P 2550 3650
+F 0 "#PWR?" H 2550 3400 50  0001 C CNN
+F 1 "GNDD" H 2550 3500 50  0000 C CNN
+F 2 "" H 2550 3650 50  0000 C CNN
+F 3 "" H 2550 3650 50  0000 C CNN
+	1    2550 3650
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	1550 3650 2550 3650
+Text Label 1800 3150 0    60   ~ 0
+D-
+Text Label 1800 3250 0    60   ~ 0
+D+
+Text Label 1600 3450 0    60   ~ 0
+TX-
+Text Label 1600 3550 0    60   ~ 0
+TX+
+Text Label 1600 3750 0    60   ~ 0
+RX-
+Text Label 1600 3850 0    60   ~ 0
+RX+
+Text Label 1750 1300 0    60   ~ 0
+D-
+Text Label 1750 1200 0    60   ~ 0
+D+
+Text Label 1750 1600 0    60   ~ 0
+TX+
+Wire Wire Line
+	1750 1200 1550 1200
+Wire Wire Line
+	1550 1300 1750 1300
+Wire Wire Line
+	1550 1400 2100 1400
+Wire Wire Line
+	1750 1500 1550 1500
+Wire Wire Line
+	1550 1600 1750 1600
+$Comp
+L GNDD #PWR?
+U 1 1 58982448
+P 1800 1700
+F 0 "#PWR?" H 1800 1450 50  0001 C CNN
+F 1 "GNDD" H 1800 1550 50  0000 C CNN
+F 2 "" H 1800 1700 50  0000 C CNN
+F 3 "" H 1800 1700 50  0000 C CNN
+	1    1800 1700
+	0    -1   -1   0   
+$EndComp
+Text Label 1650 1800 0    60   ~ 0
+RX-
+Text Label 1650 1900 0    60   ~ 0
+RX+
+Wire Wire Line
+	1800 1700 1550 1700
+Wire Wire Line
+	1550 1800 1650 1800
+Wire Wire Line
+	1650 1900 1550 1900
+NoConn ~ 3500 4400
+Wire Wire Line
+	1550 3050 1700 3050
+Wire Wire Line
+	1700 3050 2100 3050
+Wire Wire Line
+	1700 3050 1700 2800
+Text Label 1750 1500 0    60   ~ 0
+TX-
+Wire Wire Line
+	2100 3050 2100 1400
+Connection ~ 1700 3050
+NoConn ~ 1550 3350
+$Comp
+L R R?
+U 1 1 58982EC1
+P 3200 4500
+F 0 "R?" V 3280 4500 50  0000 C CNN
+F 1 "1k" V 3200 4500 50  0000 C CNN
+F 2 "" V 3130 4500 50  0000 C CNN
+F 3 "" H 3200 4500 50  0000 C CNN
+	1    3200 4500
+	0    1    1    0   
+$EndComp
+$Comp
+L R R?
+U 1 1 58982F4A
+P 2800 4500
+F 0 "R?" V 2880 4500 50  0000 C CNN
+F 1 "10k" V 2800 4500 50  0000 C CNN
+F 2 "" V 2730 4500 50  0000 C CNN
+F 3 "" H 2800 4500 50  0000 C CNN
+	1    2800 4500
+	-1   0    0    1   
+$EndComp
+$Comp
+L C C?
+U 1 1 58982FC9
+P 2500 4500
+F 0 "C?" H 2525 4600 50  0000 L CNN
+F 1 "0.1u" H 2525 4400 50  0000 L CNN
+F 2 "" H 2538 4350 50  0000 C CNN
+F 3 "" H 2500 4500 50  0000 C CNN
+	1    2500 4500
+	1    0    0    -1  
+$EndComp
+$Comp
+L GNDD #PWR?
+U 1 1 58983172
+P 2500 4800
+F 0 "#PWR?" H 2500 4550 50  0001 C CNN
+F 1 "GNDD" H 2500 4650 50  0000 C CNN
+F 2 "" H 2500 4800 50  0000 C CNN
+F 3 "" H 2500 4800 50  0000 C CNN
+	1    2500 4800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2500 4300 2800 4300
+Wire Wire Line
+	2800 4300 3500 4300
+Wire Wire Line
+	2500 4300 2500 4350
+Wire Wire Line
+	2800 4350 2800 4300
+Connection ~ 2800 4300
+Wire Wire Line
+	2800 4650 2800 4850
+Wire Wire Line
+	3350 4500 3500 4500
+Text GLabel 3150 4850 2    60   Input ~ 0
+VCCIO_FT
+Wire Wire Line
+	2800 4850 2950 4850
+Wire Wire Line
+	2950 4850 3150 4850
+Wire Wire Line
+	3050 4500 2950 4500
+Wire Wire Line
+	2950 4500 2950 4850
+Connection ~ 2950 4850
+Wire Wire Line
+	2500 4800 2500 4650
+$Comp
+L Crystal_GND24 Y?
+U 1 1 5898360D
+P 1250 4650
+F 0 "Y?" H 1400 4500 50  0000 L CNN
+F 1 "FL3000027" H 700 4500 50  0000 L CNN
+F 2 "Crystals:Crystal_SMD_3225-4pin_3.2x2.5mm_HandSoldering" H 1250 4650 50  0001 C CNN
+F 3 "" H 1250 4650 50  0000 C CNN
+	1    1250 4650
+	-1   0    0    1   
+$EndComp
+$Comp
+L C C?
+U 1 1 589837D1
+P 1600 4850
+F 0 "C?" H 1625 4950 50  0000 L CNN
+F 1 "20p" H 1625 4750 50  0000 L CNN
+F 2 "" H 1638 4700 50  0000 C CNN
+F 3 "" H 1600 4850 50  0000 C CNN
+	1    1600 4850
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C?
+U 1 1 58983840
+P 850 4850
+F 0 "C?" H 875 4950 50  0000 L CNN
+F 1 "20p" H 875 4750 50  0000 L CNN
+F 2 "" H 888 4700 50  0000 C CNN
+F 3 "" H 850 4850 50  0000 C CNN
+	1    850  4850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1600 4700 1600 4650
+Wire Wire Line
+	1600 4650 1400 4650
+Wire Wire Line
+	1100 4650 850  4650
+Wire Wire Line
+	850  4650 850  4700
+Wire Wire Line
+	850  5000 850  5050
+Wire Wire Line
+	850  5050 1250 5050
+Wire Wire Line
+	1250 5050 1600 5050
+Wire Wire Line
+	1600 5050 1600 5000
+Wire Wire Line
+	1250 4850 1250 5050
+Wire Wire Line
+	1250 5050 1250 5200
+Connection ~ 1250 5050
+$Comp
+L GNDD #PWR?
+U 1 1 58983AFE
+P 1250 5200
+F 0 "#PWR?" H 1250 4950 50  0001 C CNN
+F 1 "GNDD" H 1250 5050 50  0000 C CNN
+F 2 "" H 1250 5200 50  0000 C CNN
+F 3 "" H 1250 5200 50  0000 C CNN
+	1    1250 5200
+	1    0    0    -1  
+$EndComp
+$Comp
+L GNDD #PWR?
+U 1 1 58983B6B
+P 1250 4300
+F 0 "#PWR?" H 1250 4050 50  0001 C CNN
+F 1 "GNDD" H 1250 4150 50  0000 C CNN
+F 2 "" H 1250 4300 50  0000 C CNN
+F 3 "" H 1250 4300 50  0000 C CNN
+	1    1250 4300
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	1250 4450 1250 4300
+Text Label 1500 4650 0    60   ~ 0
+XI
+Text Label 900  4650 0    60   ~ 0
+XO
+Text Label 3300 4150 0    60   ~ 0
+XO
+Text Label 3300 4050 0    60   ~ 0
+XI
+Wire Wire Line
+	3500 4050 3300 4050
+Wire Wire Line
+	3300 4150 3500 4150
+$EndSCHEMATC
