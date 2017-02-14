@@ -1,0 +1,17 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP ECP5
+K ECP5 Lattice FPGA
+$ENDCMP
+#
+$CMP LMS6002DR2
+D LMS6002 RF front end
+K Lime LMS6002
+$ENDCMP
+#
+$CMP Si5351
+D clock
+K Si5351
+$ENDCMP
+#
+#End Doc Library
