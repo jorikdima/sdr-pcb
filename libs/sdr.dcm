@@ -9,6 +9,25 @@ D LMS6002 RF front end
 K Lime LMS6002
 $ENDCMP
 #
+$CMP MIC94310
+D LDO 200mA
+$ENDCMP
+#
+$CMP NCP186
+D LDO
+K NCP186
+$ENDCMP
+#
+$CMP PAM2306
+D Dual step-down DC-DC converter
+K PAM2306
+$ENDCMP
+#
+$CMP RaspberryPiConnector
+D Raspberry Pi reciprocal connector
+K Raspberry Pi 
+$ENDCMP
+#
 $CMP Si5351
 D clock
 K Si5351
