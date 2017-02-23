@@ -1,5 +1,4 @@
 EESchema Schematic File Version 2
-LIBS:sdr-rescue
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -31,7 +30,6 @@ LIBS:contrib
 LIBS:valves
 LIBS:sdr
 LIBS:usb-type-c
-LIBS:sdr-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
