@@ -18,6 +18,10 @@ D LDO
 K NCP186
 $ENDCMP
 #
+$CMP PAM2305
+D DC-DC Step-Down converter
+$ENDCMP
+#
 $CMP PAM2306
 D Dual step-down DC-DC converter
 K PAM2306
