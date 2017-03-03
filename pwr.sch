@@ -30,6 +30,7 @@ LIBS:contrib
 LIBS:valves
 LIBS:sdr
 LIBS:usb-type-c
+LIBS:sdr-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
@@ -384,12 +385,12 @@ $EndComp
 $Comp
 L R R7
 U 1 1 589EF8BF
-P 6600 1650
-F 0 "R7" V 6680 1650 50  0000 C CNN
-F 1 "4.7k" V 6600 1650 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" V 6530 1650 50  0001 C CNN
-F 3 "" H 6600 1650 50  0000 C CNN
-	1    6600 1650
+P 6600 1550
+F 0 "R7" V 6680 1550 50  0000 C CNN
+F 1 "4.7k" V 6600 1550 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" V 6530 1550 50  0001 C CNN
+F 3 "" H 6600 1550 50  0000 C CNN
+	1    6600 1550
 	0    1    1    0   
 $EndComp
 Text Label 9950 1250 0    60   ~ 0
@@ -401,12 +402,12 @@ TMS
 $Comp
 L GNDD #PWR013
 U 1 1 589F005F
-P 6300 1900
-F 0 "#PWR013" H 6300 1650 50  0001 C CNN
-F 1 "GNDD" H 6300 1750 50  0000 C CNN
-F 2 "" H 6300 1900 50  0000 C CNN
-F 3 "" H 6300 1900 50  0000 C CNN
-	1    6300 1900
+P 6200 1800
+F 0 "#PWR013" H 6200 1550 50  0001 C CNN
+F 1 "GNDD" H 6200 1650 50  0000 C CNN
+F 2 "" H 6200 1800 50  0000 C CNN
+F 3 "" H 6200 1800 50  0000 C CNN
+	1    6200 1800
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -422,11 +423,11 @@ F 3 "" H 6600 1150 50  0000 C CNN
 $EndComp
 Text Label 9950 1150 0    60   ~ 0
 TCK
-Text Label 6850 1150 0    60   ~ 0
+Text Label 6850 1550 0    60   ~ 0
 TDO
-Text Label 6850 1250 0    60   ~ 0
+Text Label 6850 1150 0    60   ~ 0
 TDI
-Text Label 6850 1350 0    60   ~ 0
+Text Label 6850 1850 0    60   ~ 0
 ~PRG
 Text Label 9900 1700 0    60   ~ 0
 ~PRG
@@ -436,11 +437,11 @@ Text Label 9900 1500 0    60   ~ 0
 DONE
 Text Label 6850 1750 0    60   ~ 0
 DONE
-Text Label 6850 1850 0    60   ~ 0
-~INIT
 Text Label 6850 1650 0    60   ~ 0
+~INIT
+Text Label 6850 1350 0    60   ~ 0
 TCK
-Text Label 6850 1450 0    60   ~ 0
+Text Label 6850 1250 0    60   ~ 0
 TMS
 $Comp
 L R R5
@@ -456,13 +457,13 @@ $EndComp
 $Comp
 L R R6
 U 1 1 589F2A11
-P 6600 1450
-F 0 "R6" V 6680 1450 50  0000 C CNN
-F 1 "4.7k" V 6600 1450 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" V 6530 1450 50  0001 C CNN
-F 3 "" H 6600 1450 50  0000 C CNN
-	1    6600 1450
-	0    1    1    0   
+P 6200 1550
+F 0 "R6" V 6280 1550 50  0000 C CNN
+F 1 "4.7k" V 6200 1550 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" V 6130 1550 50  0001 C CNN
+F 3 "" H 6200 1550 50  0000 C CNN
+	1    6200 1550
+	-1   0    0    1   
 $EndComp
 Text Notes 10000 2850 0    60   ~ 0
 SPI SLAVE
@@ -899,21 +900,9 @@ Wire Wire Line
 Wire Wire Line
 	9850 1250 9950 1250
 Wire Wire Line
-	6750 1650 7100 1650
-Wire Wire Line
 	7100 1750 6850 1750
 Wire Wire Line
 	6850 1850 7100 1850
-Wire Wire Line
-	6300 1550 7100 1550
-Wire Wire Line
-	6750 1450 7100 1450
-Wire Wire Line
-	6750 1150 7100 1150
-Wire Wire Line
-	6750 1250 7100 1250
-Wire Wire Line
-	7100 1350 6850 1350
 Wire Wire Line
 	8650 1550 8650 2850
 Wire Wire Line
@@ -1484,30 +1473,46 @@ F 3 "" H 7300 1500 50  0000 C CNN
 	1    7300 1500
 	1    0    0    -1  
 $EndComp
-Connection ~ 6300 1150
-Wire Wire Line
-	6450 1150 6300 1150
-Connection ~ 6300 1250
-Wire Wire Line
-	6450 1250 6300 1250
-Wire Wire Line
-	6300 1450 6450 1450
-Wire Wire Line
-	6300 900  6300 1450
-Wire Wire Line
-	6300 1900 6300 1550
-Wire Wire Line
-	6450 1650 6300 1650
-Connection ~ 6300 1650
 $Comp
-L +3V3 #PWR?
+L +3V3 #PWR036
 U 1 1 58AEBAC7
-P 6300 900
-F 0 "#PWR?" H 6300 750 50  0001 C CNN
-F 1 "+3V3" H 6300 1040 50  0000 C CNN
-F 2 "" H 6300 900 50  0000 C CNN
-F 3 "" H 6300 900 50  0000 C CNN
-	1    6300 900 
+P 6400 950
+F 0 "#PWR036" H 6400 800 50  0001 C CNN
+F 1 "+3V3" H 6400 1090 50  0000 C CNN
+F 2 "" H 6400 950 50  0000 C CNN
+F 3 "" H 6400 950 50  0000 C CNN
+	1    6400 950 
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	6750 1150 7100 1150
+Wire Wire Line
+	6750 1250 7100 1250
+Wire Wire Line
+	6750 1550 7100 1550
+Wire Wire Line
+	7100 1650 6850 1650
+Wire Wire Line
+	6400 950  6400 1550
+Wire Wire Line
+	6400 1550 6450 1550
+Wire Wire Line
+	6450 1250 6400 1250
+Connection ~ 6400 1250
+Wire Wire Line
+	6450 1150 6400 1150
+Connection ~ 6400 1150
+Wire Wire Line
+	6200 1350 7100 1350
+Wire Wire Line
+	6200 1400 6200 1350
+Wire Wire Line
+	7100 1450 6300 1450
+Wire Wire Line
+	6300 1450 6300 1750
+Wire Wire Line
+	6200 1700 6200 1800
+Wire Wire Line
+	6300 1750 6200 1750
+Connection ~ 6200 1750
 $EndSCHEMATC

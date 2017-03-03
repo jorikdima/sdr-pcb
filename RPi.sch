@@ -30,6 +30,7 @@ LIBS:contrib
 LIBS:valves
 LIBS:sdr
 LIBS:usb-type-c
+LIBS:sdr-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
@@ -58,10 +59,10 @@ F 3 "" H 1150 1350 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L +3V3 #PWR036
+L +3V3 #PWR037
 U 1 1 58A418F6
 P 800 1250
-F 0 "#PWR036" H 800 1100 50  0001 C CNN
+F 0 "#PWR037" H 800 1100 50  0001 C CNN
 F 1 "+3V3" H 800 1390 50  0000 C CNN
 F 2 "" H 800 1250 50  0000 C CNN
 F 3 "" H 800 1250 50  0000 C CNN
@@ -80,10 +81,10 @@ F 3 "" H 550 3850 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GNDD #PWR037
+L GNDD #PWR038
 U 1 1 58A80C0C
 P 1400 2500
-F 0 "#PWR037" H 1400 2250 50  0001 C CNN
+F 0 "#PWR038" H 1400 2250 50  0001 C CNN
 F 1 "GNDD" H 1400 2350 50  0000 C CNN
 F 2 "" H 1400 2500 50  0000 C CNN
 F 3 "" H 1400 2500 50  0000 C CNN
@@ -127,9 +128,9 @@ Entry Wire Line
 Entry Wire Line
 	3150 3350 3250 3250
 Text GLabel 3600 1550 2    60   BiDi ~ 0
-RPI_D[0..31]
+RPI_D[0..17]
 Text Label 3250 3400 0    60   ~ 0
-RPI_D[0..31]
+RPI_D[0..17]
 Entry Wire Line
 	3250 1650 3350 1550
 Text GLabel 1600 4100 0    60   BiDi ~ 0
@@ -313,4 +314,80 @@ Wire Wire Line
 	1300 1600 1400 1600
 Wire Wire Line
 	1400 1600 1400 1450
+Wire Bus Line
+	7200 2550 7200 700 
+Wire Bus Line
+	7200 700  5000 700 
+Wire Bus Line
+	5000 700  5000 2550
+$Comp
+L ECP5 U4
+U 8 1 58B6A811
+P 5700 2500
+F 0 "U4" H 6100 2450 60  0000 C CNN
+F 1 "ECP5" H 5800 2450 60  0000 C CNN
+F 2 "sdr-foots:ECP5_381" H 4150 3050 60  0001 C CNN
+F 3 "" H 4150 3050 60  0001 C CNN
+	8    5700 2500
+	1    0    0    -1  
+$EndComp
+Text GLabel 4600 2400 0    60   BiDi ~ 0
+FT_D[31..0]
+Text Label 5050 700  0    60   ~ 0
+FT_D[31..0]
+Entry Wire Line
+	4900 2400 5000 2500
+Wire Wire Line
+	4600 2400 4900 2400
+Text Label 5150 1900 0    60   ~ 0
+FT_D0
+Text Label 6800 2400 0    60   ~ 0
+FT_D1
+Text Label 5150 2400 0    60   ~ 0
+FT_D2
+Text Label 6800 1500 0    60   ~ 0
+FT_D3
+Text Label 5150 1300 0    60   ~ 0
+FT_D4
+Text Label 5150 2100 0    60   ~ 0
+FT_D5
+NoConn ~ 6700 1900
+NoConn ~ 6700 2100
+NoConn ~ 8700 2100
+$Comp
+L ECP5 U4
+U 9 1 58B6B1BD
+P 8900 2400
+F 0 "U4" H 9300 2350 60  0000 C CNN
+F 1 "ECP5" H 9000 2350 60  0000 C CNN
+F 2 "sdr-foots:ECP5_381" H 7350 2950 60  0001 C CNN
+F 3 "" H 7350 2950 60  0001 C CNN
+	9    8900 2400
+	1    0    0    -1  
+$EndComp
+NoConn ~ 8700 1200
+Entry Wire Line
+	5000 2000 5100 2100
+Entry Wire Line
+	7100 1500 7200 1400
+Wire Wire Line
+	7100 1500 6700 1500
+Wire Wire Line
+	5500 2100 5100 2100
+Entry Wire Line
+	5000 1200 5100 1300
+Wire Wire Line
+	5100 1300 5500 1300
+Entry Wire Line
+	5000 1800 5100 1900
+Entry Wire Line
+	5000 2300 5100 2400
+Entry Wire Line
+	7100 2400 7200 2300
+Wire Wire Line
+	7100 2400 6700 2400
+Wire Wire Line
+	5100 1900 5500 1900
+Wire Wire Line
+	5500 2400 5100 2400
 $EndSCHEMATC
