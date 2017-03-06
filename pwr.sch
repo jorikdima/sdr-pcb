@@ -467,8 +467,6 @@ F 3 "" H 6200 1550 50  0000 C CNN
 $EndComp
 Text Notes 10000 2850 0    60   ~ 0
 SPI SLAVE
-Text GLabel 8600 1750 0    60   Input ~ 0
-VCCIO_FT
 Text GLabel 4050 1300 2    60   Input ~ 0
 VCCIO_FT
 $Comp
@@ -870,7 +868,7 @@ Wire Wire Line
 Wire Wire Line
 	6850 1850 7100 1850
 Wire Wire Line
-	8650 1550 8650 2850
+	8650 1250 8650 2850
 Wire Wire Line
 	4050 1300 3750 1300
 Wire Wire Line
@@ -1227,8 +1225,6 @@ F 3 "" H 4700 3150 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Connection ~ 4700 3350
-Text GLabel 6100 3350 2    60   Input ~ 0
-LMS_A2V5
 Connection ~ 5900 3350
 Wire Wire Line
 	10800 4700 10700 4700
@@ -1278,8 +1274,6 @@ F 3 "" H 8400 1250 50  0000 C CNN
 	1    8400 1250
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	8650 1250 8650 1450
 Connection ~ 8650 1350
 Wire Wire Line
 	8200 1250 8650 1250
@@ -1384,24 +1378,6 @@ Wire Wire Line
 	7900 2450 7700 2450
 Wire Wire Line
 	7700 2450 7700 2550
-$Comp
-L C C73
-U 1 1 58AD9C04
-P 8400 1450
-F 0 "C73" H 8425 1550 50  0000 L CNN
-F 1 "100n" H 8425 1350 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0603" H 8438 1300 50  0001 C CNN
-F 3 "" H 8400 1450 50  0000 C CNN
-	1    8400 1450
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	8550 1450 8550 1550
-Wire Wire Line
-	8550 1550 8650 1550
-Wire Wire Line
-	8250 1450 7900 1450
-Connection ~ 7900 1450
 $Comp
 L CONN_01X08 X2
 U 1 1 58AE8617
@@ -1554,8 +1530,21 @@ Wire Wire Line
 	7650 3550 7650 3700
 Wire Wire Line
 	7900 3850 7900 4050
-Wire Wire Line
-	8600 1750 8650 1750
 Connection ~ 8650 1750
 Connection ~ 8650 1650
+Connection ~ 8650 1450
+Connection ~ 8650 1550
+$Comp
+L +2V5 #PWR037
+U 1 1 58BCAEE2
+P 6100 3200
+F 0 "#PWR037" H 6100 3050 50  0001 C CNN
+F 1 "+2V5" H 6100 3340 50  0000 C CNN
+F 2 "" H 6100 3200 50  0000 C CNN
+F 3 "" H 6100 3200 50  0000 C CNN
+	1    6100 3200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6100 3350 6100 3200
 $EndSCHEMATC
