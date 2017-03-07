@@ -397,4 +397,12 @@ Wire Wire Line
 Wire Wire Line
 	1800 4950 1800 4700
 Connection ~ 1800 4700
+Text Label 1000 3050 0    60   ~ 0
+~RPI_OE
+Text Label 1000 2950 0    60   ~ 0
+~RPI_WE
+Wire Wire Line
+	1400 2950 1000 2950
+Wire Wire Line
+	1000 3050 1400 3050
 $EndSCHEMATC
