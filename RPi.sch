@@ -315,9 +315,7 @@ Wire Wire Line
 Wire Wire Line
 	1400 1600 1400 1450
 Wire Bus Line
-	7200 2550 7200 700 
-Wire Bus Line
-	7200 700  5000 700 
+	7200 700  7200 2550
 Wire Bus Line
 	5000 700  5000 2550
 $Comp
@@ -353,7 +351,6 @@ Text Label 5150 2100 0    60   ~ 0
 FT_D5
 NoConn ~ 6700 1900
 NoConn ~ 6700 2100
-NoConn ~ 8700 2100
 $Comp
 L ECP5 U4
 U 9 1 58B6B1BD
@@ -399,10 +396,95 @@ Wire Wire Line
 Connection ~ 1800 4700
 Text Label 1000 3050 0    60   ~ 0
 ~RPI_OE
-Text Label 1000 2950 0    60   ~ 0
-~RPI_WE
 Wire Wire Line
-	1400 2950 1000 2950
+	950  2950 1400 2950
 Wire Wire Line
 	1000 3050 1400 3050
+Text Label 5150 1700 0    60   ~ 0
+RPI_D12
+Text Label 5150 2300 0    60   ~ 0
+RPI_D11
+Text Label 6800 1000 0    60   ~ 0
+RPI_D8
+Text Label 6800 1300 0    60   ~ 0
+RPI_D5
+Text Label 8300 1400 0    60   ~ 0
+RPI_D6
+Text Label 8300 1300 0    60   ~ 0
+RPI_D7
+Text Label 7450 1650 0    60   ~ 0
+RPI_D8
+Text Label 10000 1800 0    60   ~ 0
+RPI_D9
+Text Label 6800 1200 0    60   ~ 0
+~RPI_OE
+Text Label 5150 1200 0    60   ~ 0
+RPI_D4
+Text Label 5150 1000 0    60   ~ 0
+RPI_A0
+Text Label 10000 2200 0    60   ~ 0
+RPI_A1
+Text Label 7500 2300 0    60   ~ 0
+RPI_A2
+Text Label 7500 2400 0    60   ~ 0
+RPI_A3
+Text Label 6800 900  0    60   ~ 0
+RPI_A4
+Text Label 7500 2600 0    60   ~ 0
+RPI_A5
+Text Label 7500 2700 0    60   ~ 0
+RPI_A6
+Text GLabel 950  2950 0    60   Output ~ 0
+~RPI_WE
+Text Label 10000 1900 0    60   ~ 0
+RPI_D17
+Entry Wire Line
+	7100 1600 7200 1500
+Wire Wire Line
+	6700 1600 7100 1600
+NoConn ~ 9900 1700
+Wire Wire Line
+	6700 1200 6800 1200
+Wire Wire Line
+	6800 900  6700 900 
+Wire Wire Line
+	5500 1000 5150 1000
+Wire Wire Line
+	5150 1200 5500 1200
+Wire Wire Line
+	5500 1700 5150 1700
+Wire Wire Line
+	5150 2300 5500 2300
+Wire Wire Line
+	6700 1300 6800 1300
+Wire Wire Line
+	6800 1000 6700 1000
+Text Label 8300 2000 0    60   ~ 0
+RPI_D15
+Text Label 10000 2100 0    60   ~ 0
+RPI_D14
+Text Label 10000 1500 0    60   ~ 0
+RPI_GPIO1
+Text Label 10000 1400 0    60   ~ 0
+RPI_D10
+Wire Bus Line
+	5000 700  7200 700 
+Wire Wire Line
+	10000 1400 9900 1400
+Wire Wire Line
+	9900 1500 10000 1500
+Wire Wire Line
+	10000 1800 9900 1800
+Wire Wire Line
+	9900 1900 10000 1900
+Wire Wire Line
+	10000 2100 9900 2100
+Wire Wire Line
+	8700 1300 8300 1300
+Wire Wire Line
+	8300 1400 8700 1400
+Wire Wire Line
+	8700 2000 8300 2000
+Wire Wire Line
+	10000 2200 9900 2200
 $EndSCHEMATC

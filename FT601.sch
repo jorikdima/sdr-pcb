@@ -1195,4 +1195,38 @@ Wire Wire Line
 	6400 2150 6400 2200
 Wire Wire Line
 	6400 2200 6450 2200
+Text Label 7750 3600 0    60   ~ 0
+RPI_D13
+Text GLabel 9950 6200 0    60   BiDi ~ 0
+RPI_D[0..17]
+Entry Wire Line
+	10100 6200 10200 6100
+Text Label 10250 6100 0    60   ~ 0
+RPI_D[0..17]
+Wire Wire Line
+	10100 6200 9950 6200
+Wire Bus Line
+	10200 6100 10600 6100
+Wire Wire Line
+	7700 3600 8100 3600
+Entry Wire Line
+	8100 3600 8200 3500
+Text Label 6100 3600 0    60   ~ 0
+RPI_A5
+Text GLabel 9950 5750 0    60   BiDi ~ 0
+RPI_A[0..5]
+Entry Wire Line
+	10100 5750 10200 5650
+Text Label 10250 5650 0    60   ~ 0
+RPI_A[0..5]
+Wire Wire Line
+	10100 5750 9950 5750
+Wire Bus Line
+	10200 5650 10600 5650
+Wire Wire Line
+	6500 3600 6100 3600
+Text GLabel 6400 4500 0    60   Input ~ 0
+~RPI_WE
+Wire Wire Line
+	6500 4500 6400 4500
 $EndSCHEMATC
