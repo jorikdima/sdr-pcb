@@ -394,10 +394,6 @@ Wire Wire Line
 Wire Wire Line
 	1800 4950 1800 4700
 Connection ~ 1800 4700
-Text Label 1000 3050 0    60   ~ 0
-~RPI_OE
-Wire Wire Line
-	950  2950 1400 2950
 Wire Wire Line
 	1000 3050 1400 3050
 Text Label 5150 1700 0    60   ~ 0
@@ -408,35 +404,23 @@ Text Label 6800 1000 0    60   ~ 0
 RPI_D8
 Text Label 6800 1300 0    60   ~ 0
 RPI_D5
-Text Label 8300 1400 0    60   ~ 0
-RPI_D6
 Text Label 8300 1300 0    60   ~ 0
-RPI_D7
-Text Label 7450 1650 0    60   ~ 0
-RPI_D8
+RPI_D6
 Text Label 10000 1800 0    60   ~ 0
+RPI_D7
+Text Label 10000 1400 0    60   ~ 0
 RPI_D9
 Text Label 6800 1200 0    60   ~ 0
-~RPI_OE
-Text Label 5150 1200 0    60   ~ 0
 RPI_D4
-Text Label 5150 1000 0    60   ~ 0
+Text Label 5150 1200 0    60   ~ 0
 RPI_A0
-Text Label 10000 2200 0    60   ~ 0
+Text Label 8300 1400 0    60   ~ 0
 RPI_A1
-Text Label 7500 2300 0    60   ~ 0
+Text Label 10000 2200 0    60   ~ 0
 RPI_A2
-Text Label 7500 2400 0    60   ~ 0
+Text Label 8300 1900 0    60   ~ 0
 RPI_A3
-Text Label 6800 900  0    60   ~ 0
-RPI_A4
-Text Label 7500 2600 0    60   ~ 0
-RPI_A5
-Text Label 7500 2700 0    60   ~ 0
-RPI_A6
-Text GLabel 950  2950 0    60   Output ~ 0
-~RPI_WE
-Text Label 10000 1900 0    60   ~ 0
+Text Label 5150 1000 0    60   ~ 0
 RPI_D17
 Entry Wire Line
 	7100 1600 7200 1500
@@ -459,20 +443,18 @@ Wire Wire Line
 	6700 1300 6800 1300
 Wire Wire Line
 	6800 1000 6700 1000
-Text Label 8300 2000 0    60   ~ 0
+Text Label 10000 1900 0    60   ~ 0
 RPI_D15
-Text Label 10000 2100 0    60   ~ 0
+Text Label 8300 2000 0    60   ~ 0
 RPI_D14
-Text Label 10000 1500 0    60   ~ 0
+Text Label 10000 2100 0    60   ~ 0
 RPI_GPIO1
-Text Label 10000 1400 0    60   ~ 0
+Text Label 10000 1200 0    60   ~ 0
 RPI_D10
 Wire Bus Line
 	5000 700  7200 700 
 Wire Wire Line
 	10000 1400 9900 1400
-Wire Wire Line
-	9900 1500 10000 1500
 Wire Wire Line
 	10000 1800 9900 1800
 Wire Wire Line
@@ -487,4 +469,22 @@ Wire Wire Line
 	8700 2000 8300 2000
 Wire Wire Line
 	10000 2200 9900 2200
+Text Label 6800 900  0    60   ~ 0
+RPI_D16
+Wire Wire Line
+	10000 1200 9900 1200
+Text Label 5150 2000 0    60   ~ 0
+~RPI_WE
+Wire Wire Line
+	5150 2000 5500 2000
+Text Label 1000 2950 0    60   ~ 0
+~RPI_WE
+Wire Wire Line
+	1400 2950 1000 2950
+Text GLabel 1000 3050 0    60   Output ~ 0
+~RPI_OE
+Text Label 6800 1600 0    60   ~ 0
+RPI_A4
+Wire Wire Line
+	8700 1900 8300 1900
 $EndSCHEMATC

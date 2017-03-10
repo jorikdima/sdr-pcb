@@ -934,32 +934,6 @@ Wire Wire Line
 	4100 7050 4100 7000
 Wire Wire Line
 	4100 7000 3950 7000
-$Comp
-L ECP5 U4
-U 6 1 58ABE791
-P 8900 2700
-F 0 "U4" H 9300 2650 60  0000 C CNN
-F 1 "ECP5" H 9000 2650 60  0000 C CNN
-F 2 "sdr-foots:ECP5_381" H 7350 3250 60  0001 C CNN
-F 3 "" H 7350 3250 60  0001 C CNN
-	6    8900 2700
-	1    0    0    -1  
-$EndComp
-$Comp
-L ECP5 U4
-U 7 1 58ABE82A
-P 8900 5100
-F 0 "U4" H 9300 5050 60  0000 C CNN
-F 1 "ECP5" H 9000 5050 60  0000 C CNN
-F 2 "sdr-foots:ECP5_381" H 7350 5650 60  0001 C CNN
-F 3 "" H 7350 5650 60  0001 C CNN
-	7    8900 5100
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	9900 4000 10150 4000
-Wire Wire Line
-	9900 4900 10150 4900
 Text GLabel 6300 2150 0    60   Input ~ 0
 CLK2
 Text GLabel 7900 2150 2    60   Input ~ 0
@@ -1179,7 +1153,7 @@ Text Label 1150 6700 0    60   ~ 0
 I2C_SCL
 Text Label 6100 1100 0    60   ~ 0
 I2C_SDA
-Text Label 5350 1600 0    60   ~ 0
+Text Label 8750 1300 0    60   ~ 0
 I2C_SCL
 Wire Wire Line
 	6100 1100 6450 1100
@@ -1211,8 +1185,6 @@ Wire Wire Line
 	7700 3600 8100 3600
 Entry Wire Line
 	8100 3600 8200 3500
-Text Label 6100 3600 0    60   ~ 0
-RPI_A5
 Text GLabel 9950 5750 0    60   BiDi ~ 0
 RPI_A[0..5]
 Entry Wire Line
@@ -1223,10 +1195,25 @@ Wire Wire Line
 	10100 5750 9950 5750
 Wire Bus Line
 	10200 5650 10600 5650
+Text Label 6100 4500 0    60   ~ 0
+RPI_A5
 Wire Wire Line
-	6500 3600 6100 3600
-Text GLabel 6400 4500 0    60   Input ~ 0
-~RPI_WE
+	6100 4500 6500 4500
+Text GLabel 6450 3600 0    60   Input ~ 0
+~RPI_OE
 Wire Wire Line
-	6500 4500 6400 4500
+	6500 3600 6450 3600
+$Comp
+L ECP5 U4
+U 10 1 58C29E50
+P 9350 1500
+F 0 "U4" H 9750 1450 60  0000 C CNN
+F 1 "ECP5" H 9450 1450 60  0000 C CNN
+F 2 "sdr-foots:ECP5_381" H 7800 2050 60  0001 C CNN
+F 3 "" H 7800 2050 60  0001 C CNN
+	10   9350 1500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9150 1300 8750 1300
 $EndSCHEMATC
