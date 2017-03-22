@@ -1,3 +1,4 @@
 (fp_lib_table
   (lib (name sdr-foots)(type KiCad)(uri "$(KIPRJMOD)/libs/sdr-foots.pretty")(options "")(descr ""))
+  (lib (name LMS8001_KiCAD_Library)(type Legacy)(uri /home/jorikdima/workdir/sdr/3dparty/reference-development-kit-master/myriadrf-8001/1v0/KiCAD/LMS8001_KiCAD_Library.mod)(options "")(descr ""))
 )
