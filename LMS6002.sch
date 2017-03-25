@@ -555,8 +555,8 @@ F 2 "sdr-foots:SMA_H" H 8250 4500 60  0001 C CNN
 F 3 "" H 8475 4115 60  0000 C CNN
 F 4 "Digi-Key" H 8250 4950 60  0001 C CNN "Vendor"
 F 5 "J629-ND" H 8250 5050 60  0001 C CNN "Vendor Part Number"
-F 6 "Emerson Network Power Connectivity Johnson" H 8250 4850 60  0001 C CNN "Manufacturer"
-F 7 "142-0711-821" H 8250 4750 60  0001 C CNN "Manufacturer Part Number"
+F 6 "RF Solutions" H 8250 4850 60  0001 C CNN "Manufacturer"
+F 7 "CON-SMA-EDGE-S" H 8250 4750 60  0001 C CNN "Manufacturer Part Number"
 F 8 "CONN, SMA, JACK, 50 OHM, EDGE MNT," H 8300 4600 60  0001 C CNN "Description"
 F 9 "SMA_H" H 8600 4100 60  0000 C CNN "Component Value"
 	1    8350 3800
@@ -572,8 +572,8 @@ F 2 "sdr-foots:SMA_H" H 8150 2100 60  0001 C CNN
 F 3 "" H 8375 1715 60  0000 C CNN
 F 4 "Digi-Key" H 8150 2550 60  0001 C CNN "Vendor"
 F 5 "J629-ND" H 8150 2650 60  0001 C CNN "Vendor Part Number"
-F 6 "Emerson Network Power Connectivity Johnson" H 8150 2450 60  0001 C CNN "Manufacturer"
-F 7 "142-0711-821" H 8150 2350 60  0001 C CNN "Manufacturer Part Number"
+F 6 "RF Solutions" H 8150 2450 60  0001 C CNN "Manufacturer"
+F 7 "CON-SMA-EDGE-S" H 8150 2350 60  0001 C CNN "Manufacturer Part Number"
 F 8 "CONN, SMA, JACK, 50 OHM, EDGE MNT," H 8200 2200 60  0001 C CNN "Description"
 F 9 "SMA_H" H 8500 1700 60  0000 C CNN "Component Value"
 	1    8250 1400
