@@ -490,7 +490,6 @@ Text GLabel 10000 2050 2    60   Input ~ 0
 CFG_MISO
 Text GLabel 10000 1950 2    60   Input ~ 0
 CFG_MOSI
-NoConn ~ 9850 2650
 Text GLabel 5200 850  2    60   BiDi ~ 0
 5V_RPi
 Text GLabel 4800 850  0    60   Output ~ 0
@@ -1550,4 +1549,5 @@ Wire Wire Line
 	10800 5200 10800 5550
 Wire Wire Line
 	10800 4700 10800 4900
+NoConn ~ 9850 2650
 $EndSCHEMATC

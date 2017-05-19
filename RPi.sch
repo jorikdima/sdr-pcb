@@ -133,21 +133,21 @@ Text Label 3250 3400 0    60   ~ 0
 RPI_D[0..17]
 Entry Wire Line
 	3250 1650 3350 1550
-Text GLabel 1600 4100 0    60   BiDi ~ 0
+Text GLabel 1550 4250 0    60   BiDi ~ 0
 CFG_MOSI
-Text Label 2000 4100 0    60   ~ 0
+Text Label 1950 4250 0    60   ~ 0
 RPI_D2
-Text GLabel 1600 4300 0    60   BiDi ~ 0
+Text GLabel 1550 4750 0    60   BiDi ~ 0
 CFG_MISO
-Text GLabel 1600 4500 0    60   BiDi ~ 0
+Text GLabel 1550 5150 0    60   BiDi ~ 0
 CFG_MCLK
-Text GLabel 1600 4700 0    60   BiDi ~ 0
+Text GLabel 1550 5700 0    60   BiDi ~ 0
 ~CFG_CS
-Text Label 2000 4700 0    60   ~ 0
+Text Label 1950 5700 0    60   ~ 0
 RPI_D0
-Text Label 2000 4300 0    60   ~ 0
+Text Label 1950 4750 0    60   ~ 0
 RPI_D1
-Text Label 2000 4500 0    60   ~ 0
+Text Label 1950 5150 0    60   ~ 0
 RPI_D3
 Wire Wire Line
 	800  1350 800  1250
@@ -173,13 +173,13 @@ Wire Bus Line
 Wire Wire Line
 	3350 1550 3600 1550
 Wire Wire Line
-	2000 4100 1600 4100
+	1950 4250 1550 4250
 Wire Wire Line
-	1600 4300 2000 4300
+	1550 4750 1950 4750
 Wire Wire Line
-	2000 4500 1600 4500
+	1950 5150 1550 5150
 Wire Wire Line
-	1600 4700 2000 4700
+	1550 5700 1950 5700
 Wire Bus Line
 	3200 650  3200 1450
 Wire Bus Line
@@ -387,13 +387,13 @@ Wire Wire Line
 	5100 1900 5500 1900
 Wire Wire Line
 	5500 2400 5100 2400
-Text GLabel 2000 4950 2    60   Input ~ 0
+Text GLabel 1950 5950 2    60   Input ~ 0
 FT_GPIO1
 Wire Wire Line
-	2000 4950 1800 4950
+	1950 5950 1750 5950
 Wire Wire Line
-	1800 4950 1800 4700
-Connection ~ 1800 4700
+	1750 5950 1750 5700
+Connection ~ 1750 5700
 Wire Wire Line
 	1000 3050 1400 3050
 Text Label 5150 1700 0    60   ~ 0
@@ -487,4 +487,29 @@ Text Label 6800 1600 0    60   ~ 0
 RPI_A4
 Wire Wire Line
 	8700 1900 8300 1900
+Text Label 10000 1300 0    60   ~ 0
+RPI_D3
+Wire Wire Line
+	10000 1300 9900 1300
+Text GLabel 1950 4900 2    60   BiDi ~ 0
+FT_D0
+Wire Wire Line
+	1950 4900 1750 4900
+Wire Wire Line
+	1750 4900 1750 4750
+Connection ~ 1750 4750
+Text GLabel 1950 4450 2    60   BiDi ~ 0
+FT_D4
+Wire Wire Line
+	1950 4450 1750 4450
+Wire Wire Line
+	1750 4450 1750 4250
+Connection ~ 1750 4250
+Text GLabel 1950 5400 2    60   BiDi ~ 0
+FT_D3
+Wire Wire Line
+	1950 5400 1750 5400
+Wire Wire Line
+	1750 5400 1750 5150
+Connection ~ 1750 5150
 $EndSCHEMATC

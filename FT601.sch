@@ -911,7 +911,7 @@ Wire Wire Line
 	4350 6750 4500 6750
 Connection ~ 4500 6750
 Text Notes 4700 7550 0    60   ~ 0
-The goal of these two resistors is to set ~OE~\ninput of FT601 before FPGA is configured.\nIf there is no Paspberri Pi board connected\nto this board, then this input is tied to 0 via\n10k resistor. In this case FT601 will be in\noutput mode and will be able to work as the\ndevice which load FPGA firmware via emulation\nof SPI. If we have Raspberri Pi connected then \nresistor devider will set ~OE~ voltage to\n3V3*10/11 which is treated as 1 by Ft601 and\nit will not drive the bus and will let Raspberry\nPi to upload firmvare to FPGA via its HW SPI.\nThe purpose of ~FT_RD~ pulling down is the \nsame - allow Ft601 to drive the bus while \nFPGA is not configured yet.
+The goal of these two resistors is to set ~OE~\ninput of FT601 before FPGA is configured.\nIf there is no Paspberri Pi board connected\nto this board, then this input is tied to 0 via\n10k resistor. In this case FT601 will be in\noutput mode and will be able to work as the\ndevice which load FPGA firmware via emulation\nof SPI. If we have Raspberri Pi connected then \nresistor devider will set ~OE~ voltage to\n3V3*10/11 which is treated as 1 by Ft601 and\nit will not drive the bus and will let Raspberry\nPi to upload firmvare to FPGA via its HW SPI.\nThe purpose of ~FT_RD~ pulling down is the \nsame - to allow Ft601 to drive the bus while \nFPGA is not configured yet.
 Text GLabel 3950 7000 0    60   Input ~ 0
 ~FT_RD
 $Comp
