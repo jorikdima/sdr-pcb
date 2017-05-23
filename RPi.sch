@@ -59,10 +59,10 @@ F 3 "" H 1150 1350 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L +3V3 #PWR037
+L +3V3 #PWR37
 U 1 1 58A418F6
 P 800 1250
-F 0 "#PWR037" H 800 1100 50  0001 C CNN
+F 0 "#PWR37" H 800 1100 50  0001 C CNN
 F 1 "+3V3" H 800 1390 50  0000 C CNN
 F 2 "" H 800 1250 50  0000 C CNN
 F 3 "" H 800 1250 50  0000 C CNN
@@ -81,10 +81,10 @@ F 3 "" H 550 3850 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GNDD #PWR038
+L GNDD #PWR38
 U 1 1 58A80C0C
 P 1400 2500
-F 0 "#PWR038" H 1400 2250 50  0001 C CNN
+F 0 "#PWR38" H 1400 2250 50  0001 C CNN
 F 1 "GNDD" H 1400 2350 50  0000 C CNN
 F 2 "" H 1400 2500 50  0000 C CNN
 F 3 "" H 1400 2500 50  0000 C CNN
@@ -133,21 +133,21 @@ Text Label 3250 3400 0    60   ~ 0
 RPI_D[0..17]
 Entry Wire Line
 	3250 1650 3350 1550
-Text GLabel 1550 4250 0    60   BiDi ~ 0
+Text GLabel 1400 3900 0    60   BiDi ~ 0
 CFG_MOSI
-Text Label 1950 4250 0    60   ~ 0
+Text Label 1800 3900 0    60   ~ 0
 RPI_D2
-Text GLabel 1550 4750 0    60   BiDi ~ 0
+Text GLabel 1400 4400 0    60   BiDi ~ 0
 CFG_MISO
-Text GLabel 1550 5150 0    60   BiDi ~ 0
+Text GLabel 1400 4800 0    60   BiDi ~ 0
 CFG_MCLK
-Text GLabel 1550 5700 0    60   BiDi ~ 0
+Text GLabel 1400 5350 0    60   BiDi ~ 0
 ~CFG_CS
-Text Label 1950 5700 0    60   ~ 0
+Text Label 1800 5350 0    60   ~ 0
 RPI_D0
-Text Label 1950 4750 0    60   ~ 0
+Text Label 1800 4400 0    60   ~ 0
 RPI_D1
-Text Label 1950 5150 0    60   ~ 0
+Text Label 1800 4800 0    60   ~ 0
 RPI_D3
 Wire Wire Line
 	800  1350 800  1250
@@ -173,13 +173,13 @@ Wire Bus Line
 Wire Wire Line
 	3350 1550 3600 1550
 Wire Wire Line
-	1950 4250 1550 4250
+	1800 3900 1400 3900
 Wire Wire Line
-	1550 4750 1950 4750
+	1400 4400 1800 4400
 Wire Wire Line
-	1950 5150 1550 5150
+	1800 4800 1400 4800
 Wire Wire Line
-	1550 5700 1950 5700
+	1400 5350 1800 5350
 Wire Bus Line
 	3200 650  3200 1450
 Wire Bus Line
@@ -387,13 +387,13 @@ Wire Wire Line
 	5100 1900 5500 1900
 Wire Wire Line
 	5500 2400 5100 2400
-Text GLabel 1950 5950 2    60   Input ~ 0
+Text GLabel 1800 5600 2    60   Input ~ 0
 FT_GPIO1
 Wire Wire Line
-	1950 5950 1750 5950
+	1800 5600 1600 5600
 Wire Wire Line
-	1750 5950 1750 5700
-Connection ~ 1750 5700
+	1600 5600 1600 5350
+Connection ~ 1600 5350
 Wire Wire Line
 	1000 3050 1400 3050
 Text Label 5150 1700 0    60   ~ 0
@@ -491,25 +491,27 @@ Text Label 10000 1300 0    60   ~ 0
 RPI_D3
 Wire Wire Line
 	10000 1300 9900 1300
-Text GLabel 1950 4900 2    60   BiDi ~ 0
+Text GLabel 1800 4550 2    60   BiDi ~ 0
 FT_D0
 Wire Wire Line
-	1950 4900 1750 4900
+	1800 4550 1600 4550
 Wire Wire Line
-	1750 4900 1750 4750
-Connection ~ 1750 4750
-Text GLabel 1950 4450 2    60   BiDi ~ 0
+	1600 4550 1600 4400
+Connection ~ 1600 4400
+Text GLabel 1800 4100 2    60   BiDi ~ 0
 FT_D4
 Wire Wire Line
-	1950 4450 1750 4450
+	1800 4100 1600 4100
 Wire Wire Line
-	1750 4450 1750 4250
-Connection ~ 1750 4250
-Text GLabel 1950 5400 2    60   BiDi ~ 0
+	1600 4100 1600 3900
+Connection ~ 1600 3900
+Text GLabel 1800 5050 2    60   BiDi ~ 0
 FT_D3
 Wire Wire Line
-	1950 5400 1750 5400
+	1800 5050 1600 5050
 Wire Wire Line
-	1750 5400 1750 5150
-Connection ~ 1750 5150
+	1600 5050 1600 4800
+Connection ~ 1600 4800
+Text Notes 800  7600 0    60   ~ 0
+Programming of FPGA can be done using 3 ways:\n1. JTAG. \n2. RPI\n3. USB\nSecond and third ways use SPI interface of FPGA. In case of RPI we use its HW\nSPI controller in Master mode. In case of USB we emulate SPI on its pins.\nThats why few pins of Ft600 are connected to SPI port of FPGA and they are\nshortened with RPI pins. This should not be a problem as RPI and USB are not\nsupposed to be connected at the same moment.\nConfiguration flow in case of RPI is pretty straight forward, just use HW SPI\nafter power on. PROGRAM/INIT pins are not used, therefore starting of configuration \nof FPGA is possible only after power on. PROGRAM pin is not\nconnected either to Ft600 or RPI because it requires dedicated pin without\na chance to reuse is as GPIO after FPGA configuration.\nIn case of USB GPIO1 of Ft600 is supposed to provide CS signal. We only have\nability to write data to FPGA, therefore no verification is possible. MCLK and MOSI \nare emulated on pins D4 and D3. Though MISO pin is connected to Ft600 \nit can't be used because reading procedure in Ft600 is syncronius to FTCLK.\n
 $EndSCHEMATC

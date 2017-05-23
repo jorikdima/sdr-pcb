@@ -4,6 +4,11 @@ $CMP BGS12
 D RF multiplexer
 $ENDCMP
 #
+$CMP DualDiode
+D Dual diode
+K diode
+$ENDCMP
+#
 $CMP ECP5
 K ECP5 Lattice FPGA
 $ENDCMP
