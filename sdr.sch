@@ -54,13 +54,13 @@ $EndSheet
 $Sheet
 S 7300 2000 2500 1500
 U 589F831F
-F0 "RPi" 60
+F0 "RPi/LMS" 60
 F1 "RPi.sch" 60
 $EndSheet
 $Sheet
 S 4450 4850 2350 1300
 U 58A034EC
-F0 "LMS6002" 60
+F0 "RF" 60
 F1 "LMS6002.sch" 60
 $EndSheet
 $Sheet

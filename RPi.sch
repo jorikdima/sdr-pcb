@@ -514,4 +514,294 @@ Wire Wire Line
 Connection ~ 1600 4800
 Text Notes 800  7600 0    60   ~ 0
 Programming of FPGA can be done using 3 ways:\n1. JTAG. \n2. RPI\n3. USB\nSecond and third ways use SPI interface of FPGA. In case of RPI we use its HW\nSPI controller in Master mode. In case of USB we emulate SPI on its pins.\nThats why few pins of Ft600 are connected to SPI port of FPGA and they are\nshortened with RPI pins. This should not be a problem as RPI and USB are not\nsupposed to be connected at the same moment.\nConfiguration flow in case of RPI is pretty straight forward, just use HW SPI\nafter power on. PROGRAM/INIT pins are not used, therefore starting of configuration \nof FPGA is possible only after power on. PROGRAM pin is not\nconnected either to Ft600 or RPI because it requires dedicated pin without\na chance to reuse is as GPIO after FPGA configuration.\nIn case of USB GPIO1 of Ft600 is supposed to provide CS signal. We only have\nability to write data to FPGA, therefore no verification is possible. MCLK and MOSI \nare emulated on pins D4 and D3. Though MISO pin is connected to Ft600 \nit can't be used because reading procedure in Ft600 is syncronius to FTCLK.\n
+$Comp
+L ECP5 U4
+U 6 1 592480E1
+P 5300 7550
+F 0 "U4" H 5700 7500 60  0000 C CNN
+F 1 "ECP5" H 5400 7500 60  0000 C CNN
+F 2 "" H 3750 8100 60  0001 C CNN
+F 3 "" H 3750 8100 60  0001 C CNN
+	6    5300 7550
+	1    0    0    -1  
+$EndComp
+$Comp
+L ECP5 U4
+U 7 1 5924815B
+P 5350 5150
+F 0 "U4" H 5750 5100 60  0000 C CNN
+F 1 "ECP5" H 5450 5100 60  0000 C CNN
+F 2 "" H 3800 5700 60  0001 C CNN
+F 3 "" H 3800 5700 60  0001 C CNN
+	7    5350 5150
+	1    0    0    -1  
+$EndComp
+Text GLabel 6500 5950 2    60   Output ~ 0
+LMS_TX_MUX
+Text GLabel 6500 6050 2    60   Output ~ 0
+LMS_RX_MUX
+Wire Wire Line
+	6500 5950 6300 5950
+Text Label 6650 3550 2    60   ~ 0
+TXD0
+Text Label 6650 3650 2    60   ~ 0
+TXD1
+Text Label 6650 3750 2    60   ~ 0
+TXD2
+Text Label 6650 3850 2    60   ~ 0
+TXD3
+Text Label 6650 3950 2    60   ~ 0
+TXD4
+Text Label 6650 4050 2    60   ~ 0
+TXD5
+Text Label 6650 4150 2    60   ~ 0
+TXD6
+Text Label 6650 4250 2    60   ~ 0
+TXD7
+Text Label 6650 4350 2    60   ~ 0
+TXD8
+Text Label 6650 4450 2    60   ~ 0
+TXD9
+Text Label 6650 4550 2    60   ~ 0
+TXD10
+Text Label 6650 4650 2    60   ~ 0
+TXD11
+Wire Wire Line
+	6350 3550 6650 3550
+Wire Wire Line
+	6350 3650 6650 3650
+Wire Wire Line
+	6350 3750 6650 3750
+Wire Wire Line
+	6350 3850 6650 3850
+Wire Wire Line
+	6350 3950 6650 3950
+Wire Wire Line
+	6350 4050 6650 4050
+Wire Wire Line
+	6350 4150 6650 4150
+Wire Wire Line
+	6350 4250 6650 4250
+Wire Wire Line
+	6350 4350 6650 4350
+Wire Wire Line
+	6350 4450 6650 4450
+Wire Wire Line
+	6350 4550 6650 4550
+Wire Wire Line
+	6350 4650 6650 4650
+Text Label 6550 6350 2    60   ~ 0
+RXD0
+Text Label 6550 6450 2    60   ~ 0
+RXD1
+Text Label 6550 6550 2    60   ~ 0
+RXD2
+Text Label 6550 6650 2    60   ~ 0
+RXD3
+Text Label 6550 6750 2    60   ~ 0
+RXD4
+Text Label 6550 6850 2    60   ~ 0
+RXD5
+Text Label 6550 6950 2    60   ~ 0
+RXD6
+Text Label 6550 7050 2    60   ~ 0
+RXD7
+Text Label 6550 7150 2    60   ~ 0
+RXD8
+Text Label 6550 7250 2    60   ~ 0
+RXD9
+Text Label 6550 7350 2    60   ~ 0
+RXD10
+Text Label 6550 7450 2    60   ~ 0
+RXD11
+Wire Wire Line
+	6550 6350 6300 6350
+Wire Wire Line
+	6550 6450 6300 6450
+Wire Wire Line
+	6550 6550 6300 6550
+Wire Wire Line
+	6550 6650 6300 6650
+Wire Wire Line
+	6550 6750 6300 6750
+Wire Wire Line
+	6550 6850 6300 6850
+Wire Wire Line
+	6550 6950 6300 6950
+Wire Wire Line
+	6550 7050 6300 7050
+Wire Wire Line
+	6550 7150 6300 7150
+Wire Wire Line
+	6550 7250 6300 7250
+Wire Wire Line
+	6550 7350 6300 7350
+Wire Wire Line
+	6550 7450 6300 7450
+Wire Wire Line
+	6500 6050 6300 6050
+$Comp
+L LMS6002DR2 U3
+U 2 1 59250859
+P 9300 6200
+F 0 "U3" H 9200 6100 60  0000 C CNN
+F 1 "LMS6002DR2" H 9150 5300 60  0001 C CNN
+F 2 "sdr-foots:DQFN-120_via_off_pad" H 9160 5400 60  0001 C CNN
+F 3 "" H 9350 10150 60  0000 C CNN
+F 4 "1434-1000-1-ND" H 9140 5910 60  0001 C CNN "Vendor Part Number"
+F 5 "Digi-Key" H 9130 5820 60  0001 C CNN "Vendor"
+F 6 "IC, MULTI-FUNCTION, TRANSCEIVER," H 9130 5490 60  0001 C CNN "Description"
+F 7 "Lime Microsystems Ltd" H 9140 5720 60  0001 C CNN "Manufacturer"
+F 8 "LMS6002DFN" H 9130 5600 60  0001 C CNN "Manufacturer Part Number"
+F 9 "LMS6002DR2" H 9650 6100 60  0000 C CNN "Component Value"
+	2    9300 6200
+	1    0    0    -1  
+$EndComp
+Text Label 8850 2900 0    60   ~ 0
+TXD0
+Text Label 8850 3000 0    60   ~ 0
+TXD1
+Text Label 8850 3100 0    60   ~ 0
+TXD2
+Text Label 8850 3200 0    60   ~ 0
+TXD3
+Text Label 8850 3300 0    60   ~ 0
+TXD4
+Text Label 8850 3400 0    60   ~ 0
+TXD5
+Text Label 8850 3500 0    60   ~ 0
+TXD6
+Text Label 8850 3600 0    60   ~ 0
+TXD7
+Text Label 8850 3700 0    60   ~ 0
+TXD8
+Text Label 8850 3800 0    60   ~ 0
+TXD9
+Text Label 8850 3900 0    60   ~ 0
+TXD10
+Text Label 8850 4000 0    60   ~ 0
+TXD11
+NoConn ~ 9100 5350
+NoConn ~ 10200 4750
+NoConn ~ 10200 4850
+Text GLabel 9000 4650 0    60   Output ~ 0
+CLK0
+Text GLabel 9050 4950 0    60   Input ~ 0
+LMS_TX_EN
+Text GLabel 9050 5050 0    60   Input ~ 0
+LMS_TX_CLK
+Text GLabel 9050 5150 0    60   Input ~ 0
+LMS_TX_IQSEL
+Text GLabel 9050 5550 0    60   Input ~ 0
+LMS_RESET
+Text GLabel 9050 5750 0    60   Input ~ 0
+~LMS_CS
+Text GLabel 9050 5850 0    60   Input ~ 0
+LMS_SCLK
+Text GLabel 9050 5950 0    60   Input ~ 0
+LMS_MOSI
+Text GLabel 9050 6050 0    60   Input ~ 0
+LMS_MISO
+Text GLabel 9050 4250 0    60   Input ~ 0
+LMS_RX_EN
+Text GLabel 9050 4350 0    60   Input ~ 0
+LMS_RX_CLK
+Text GLabel 9050 4450 0    60   Output ~ 0
+LMS_RX_IQSEL
+Text Label 10250 3100 0    60   ~ 0
+RXD9
+Text Label 10250 3200 0    60   ~ 0
+RXD8
+Text Label 10250 3300 0    60   ~ 0
+RXD7
+Text Label 10250 3400 0    60   ~ 0
+RXD6
+Text Label 10250 3500 0    60   ~ 0
+RXD5
+Text Label 10250 3600 0    60   ~ 0
+RXD4
+Text Label 10250 3700 0    60   ~ 0
+RXD3
+Text Label 10250 3800 0    60   ~ 0
+RXD2
+Text Label 10250 3900 0    60   ~ 0
+RXD1
+Text Label 10250 4000 0    60   ~ 0
+RXD0
+Wire Wire Line
+	9100 4650 9000 4650
+Wire Wire Line
+	9100 4950 9050 4950
+Wire Wire Line
+	9050 5050 9100 5050
+Wire Wire Line
+	9100 5150 9050 5150
+Wire Wire Line
+	9100 5550 9050 5550
+Wire Wire Line
+	9050 5750 9100 5750
+Wire Wire Line
+	9100 5850 9050 5850
+Wire Wire Line
+	9050 5950 9100 5950
+Wire Wire Line
+	9100 6050 9050 6050
+Wire Wire Line
+	9100 4250 9050 4250
+Wire Wire Line
+	9050 4350 9100 4350
+Wire Wire Line
+	9100 4450 9050 4450
+Text Label 10250 3000 0    60   ~ 0
+RXD10
+Text Label 10250 2900 0    60   ~ 0
+RXD11
+Wire Wire Line
+	10250 2900 10200 2900
+Wire Wire Line
+	10250 3000 10200 3000
+Wire Wire Line
+	10250 3100 10200 3100
+Wire Wire Line
+	10250 3200 10200 3200
+Wire Wire Line
+	10250 3300 10200 3300
+Wire Wire Line
+	10250 3400 10200 3400
+Wire Wire Line
+	10250 3500 10200 3500
+Wire Wire Line
+	10250 3600 10200 3600
+Wire Wire Line
+	10250 3700 10200 3700
+Wire Wire Line
+	10250 3800 10200 3800
+Wire Wire Line
+	10250 3900 10200 3900
+Wire Wire Line
+	10250 4000 10200 4000
+Wire Wire Line
+	8850 2900 9100 2900
+Wire Wire Line
+	8850 3000 9100 3000
+Wire Wire Line
+	8850 3100 9100 3100
+Wire Wire Line
+	8850 3200 9100 3200
+Wire Wire Line
+	8850 3300 9100 3300
+Wire Wire Line
+	8850 3400 9100 3400
+Wire Wire Line
+	8850 3500 9100 3500
+Wire Wire Line
+	8850 3600 9100 3600
+Wire Wire Line
+	8850 3700 9100 3700
+Wire Wire Line
+	8850 3800 9100 3800
+Wire Wire Line
+	8850 3900 9100 3900
+Wire Wire Line
+	8850 4000 9100 4000
 $EndSCHEMATC
