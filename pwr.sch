@@ -35,7 +35,7 @@ EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 2 6
+Sheet 2 7
 Title "SDR"
 Date ""
 Rev ""
@@ -1015,7 +1015,7 @@ Wire Wire Line
 Wire Wire Line
 	5850 5300 5850 5600
 Wire Wire Line
-	5850 5500 5700 5500
+	5700 5500 6100 5500
 $Comp
 L C C80
 U 1 1 58A7A7BE
@@ -1400,7 +1400,7 @@ Wire Wire Line
 Wire Wire Line
 	9550 3950 9550 4050
 Wire Wire Line
-	9200 4400 9700 4400
+	9200 4400 9550 4400
 Wire Wire Line
 	9350 4400 9350 4500
 Connection ~ 9350 4400
@@ -1523,51 +1523,40 @@ Wire Wire Line
 Wire Wire Line
 	10850 5100 10850 5450
 Wire Wire Line
-	10850 4600 10850 4800
+	10850 4500 10850 4800
 NoConn ~ 9850 2650
 $Comp
 L Jumper JP1
 U 1 1 59327579
-P 9400 4900
-F 0 "JP1" H 9400 5050 50  0000 C CNN
-F 1 "Jumper" H 9400 4820 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x02_Pitch2.54mm" H 9400 4900 50  0001 C CNN
-F 3 "" H 9400 4900 50  0001 C CNN
-	1    9400 4900
+P 9150 4850
+F 0 "JP1" H 9150 5000 50  0000 C CNN
+F 1 "Jumper" H 9150 4770 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Angled_1x02_Pitch2.54mm" H 9150 4850 50  0001 C CNN
+F 3 "" H 9150 4850 50  0001 C CNN
+	1    9150 4850
 	1    0    0    -1  
 $EndComp
 Connection ~ 9450 5200
 Wire Wire Line
-	9700 4800 9700 5100
-Wire Wire Line
 	10850 4600 10750 4600
-Wire Wire Line
-	9100 4900 9000 4900
-Wire Wire Line
-	9000 4900 9000 5200
-Connection ~ 9000 5200
 $Comp
 L R R29
 U 1 1 593281E5
-P 9700 4650
-F 0 "R29" V 9780 4650 50  0000 C CNN
-F 1 "4.7k" V 9700 4650 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" V 9630 4650 50  0001 C CNN
-F 3 "" H 9700 4650 50  0001 C CNN
-	1    9700 4650
-	1    0    0    -1  
+P 9400 5100
+F 0 "R29" V 9500 5100 50  0000 C CNN
+F 1 "4.7k" V 9400 5100 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" V 9330 5100 50  0001 C CNN
+F 3 "" H 9400 5100 50  0001 C CNN
+	1    9400 5100
+	0    -1   -1   0   
 $EndComp
-Connection ~ 9700 4900
-Wire Wire Line
-	9700 4400 9700 4500
-Connection ~ 9550 4400
 $Comp
 L Jumper JP2
 U 1 1 5932952B
 P 3700 1400
 F 0 "JP2" H 3700 1550 50  0000 C CNN
 F 1 "Jumper" H 3700 1320 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x02_Pitch2.54mm" H 3700 1400 50  0001 C CNN
+F 2 "Pin_Headers:Pin_Header_Angled_1x02_Pitch2.54mm" H 3700 1400 50  0001 C CNN
 F 3 "" H 3700 1400 50  0001 C CNN
 	1    3700 1400
 	1    0    0    -1  
@@ -1581,4 +1570,70 @@ Wire Wire Line
 Wire Wire Line
 	4050 1600 4050 1400
 Connection ~ 4050 1400
+$Comp
+L TEST TP3
+U 1 1 59339CA4
+P 10850 4500
+F 0 "TP3" H 10850 4800 50  0000 C BNN
+F 1 "TEST" H 10850 4750 50  0000 C CNN
+F 2 "Measurement_Points:Measurement_Point_Square-SMD-Pad_Small" H 10850 4500 50  0001 C CNN
+F 3 "" H 10850 4500 50  0001 C CNN
+	1    10850 4500
+	1    0    0    -1  
+$EndComp
+Connection ~ 10850 4600
+$Comp
+L TEST TP1
+U 1 1 5933A8A7
+P 5000 6700
+F 0 "TP1" H 5000 7000 50  0000 C BNN
+F 1 "TEST" H 5000 6950 50  0000 C CNN
+F 2 "Measurement_Points:Measurement_Point_Square-SMD-Pad_Small" H 5000 6700 50  0001 C CNN
+F 3 "" H 5000 6700 50  0001 C CNN
+	1    5000 6700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5000 6700 5000 6850
+Connection ~ 5000 6850
+$Comp
+L TEST TP2
+U 1 1 5933AA96
+P 6100 5400
+F 0 "TP2" H 6100 5700 50  0000 C BNN
+F 1 "TEST" H 6100 5650 50  0000 C CNN
+F 2 "Measurement_Points:Measurement_Point_Square-SMD-Pad_Small" H 6100 5400 50  0001 C CNN
+F 3 "" H 6100 5400 50  0001 C CNN
+	1    6100 5400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6100 5500 6100 5400
+Wire Wire Line
+	9700 5100 9550 5100
+Wire Wire Line
+	9450 4850 9650 4850
+Wire Wire Line
+	9650 4850 9650 5100
+Connection ~ 9650 5100
+$Comp
+L GNDD #PWR037
+U 1 1 5936655F
+P 8800 4950
+F 0 "#PWR037" H 8800 4700 50  0001 C CNN
+F 1 "GNDD" H 8800 4800 50  0000 C CNN
+F 2 "" H 8800 4950 50  0000 C CNN
+F 3 "" H 8800 4950 50  0000 C CNN
+	1    8800 4950
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	8800 4950 8800 4850
+Wire Wire Line
+	8800 4850 8850 4850
+Wire Wire Line
+	9250 5100 9050 5100
+Wire Wire Line
+	9050 5100 9050 5200
+Connection ~ 9050 5200
 $EndSCHEMATC
