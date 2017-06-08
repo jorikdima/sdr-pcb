@@ -59,10 +59,10 @@ F 3 "" H 1150 1350 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L +3V3 #PWR038
+L +3V3 #PWR037
 U 1 1 58A418F6
 P 800 1250
-F 0 "#PWR038" H 800 1100 50  0001 C CNN
+F 0 "#PWR037" H 800 1100 50  0001 C CNN
 F 1 "+3V3" H 800 1390 50  0000 C CNN
 F 2 "" H 800 1250 50  0000 C CNN
 F 3 "" H 800 1250 50  0000 C CNN
@@ -81,10 +81,10 @@ F 3 "" H 550 3850 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GNDD #PWR039
+L GNDD #PWR038
 U 1 1 58A80C0C
 P 1400 2500
-F 0 "#PWR039" H 1400 2250 50  0001 C CNN
+F 0 "#PWR038" H 1400 2250 50  0001 C CNN
 F 1 "GNDD" H 1400 2350 50  0000 C CNN
 F 2 "" H 1400 2500 50  0000 C CNN
 F 3 "" H 1400 2500 50  0000 C CNN
@@ -512,17 +512,17 @@ Wire Wire Line
 Wire Wire Line
 	1600 5050 1600 4800
 Connection ~ 1600 4800
-Text Notes 800  7600 0    60   ~ 0
+Text Notes 700  7700 0    60   ~ 0
 Programming of FPGA can be done using 3 ways:\n1. JTAG. \n2. RPI\n3. USB\nSecond and third ways use SPI interface of FPGA. In case of RPI we use its HW\nSPI controller in Master mode. In case of USB we emulate SPI on its pins.\nThats why few pins of Ft600 are connected to SPI port of FPGA and they are\nshortened with RPI pins. This should not be a problem as RPI and USB are not\nsupposed to be connected at the same moment.\nConfiguration flow in case of RPI is pretty straight forward, just use HW SPI\nafter power on. PROGRAM/INIT pins are not used, therefore starting of configuration \nof FPGA is possible only after power on. PROGRAM pin is not\nconnected either to Ft600 or RPI because it requires dedicated pin without\na chance to reuse is as GPIO after FPGA configuration.\nIn case of USB GPIO1 of Ft600 is supposed to provide CS signal. We only have\nability to write data to FPGA, therefore no verification is possible. MCLK and MOSI \nare emulated on pins D4 and D3. Though MISO pin is connected to Ft600 \nit can't be used because reading procedure in Ft600 is syncronius to FTCLK.\n
 $Comp
 L ECP5 U4
 U 6 1 592480E1
-P 5300 7550
-F 0 "U4" H 5700 7500 60  0000 C CNN
-F 1 "ECP5" H 5400 7500 60  0000 C CNN
-F 2 "sdr-foots:ECP5_381" H 3750 8100 60  0001 C CNN
-F 3 "" H 3750 8100 60  0001 C CNN
-	6    5300 7550
+P 5350 7300
+F 0 "U4" H 5750 7250 60  0000 C CNN
+F 1 "ECP5" H 5450 7250 60  0000 C CNN
+F 2 "sdr-foots:ECP5_381" H 3800 7850 60  0001 C CNN
+F 3 "" H 3800 7850 60  0001 C CNN
+	6    5350 7300
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -536,12 +536,12 @@ F 3 "" H 3800 5700 60  0001 C CNN
 	7    5350 5150
 	1    0    0    -1  
 $EndComp
-Text GLabel 6500 5950 2    60   Output ~ 0
+Text GLabel 6550 5700 2    60   Output ~ 0
 LMS_TX_MUX
-Text GLabel 6500 6050 2    60   Output ~ 0
+Text GLabel 6550 5800 2    60   Output ~ 0
 LMS_RX_MUX
 Wire Wire Line
-	6500 5950 6300 5950
+	6550 5700 6350 5700
 Text Label 6650 3550 2    60   ~ 0
 TXD0
 Text Label 6650 3650 2    60   ~ 0
@@ -590,56 +590,56 @@ Wire Wire Line
 	6350 4550 6650 4550
 Wire Wire Line
 	6350 4650 6650 4650
-Text Label 6550 6350 2    60   ~ 0
+Text Label 6600 6100 2    60   ~ 0
 RXD0
-Text Label 6550 6450 2    60   ~ 0
+Text Label 6600 6200 2    60   ~ 0
 RXD1
-Text Label 6550 6550 2    60   ~ 0
+Text Label 6600 6300 2    60   ~ 0
 RXD2
-Text Label 6550 6650 2    60   ~ 0
+Text Label 6600 6400 2    60   ~ 0
 RXD3
-Text Label 6550 6750 2    60   ~ 0
+Text Label 6600 6500 2    60   ~ 0
 RXD4
-Text Label 6550 6850 2    60   ~ 0
+Text Label 6600 6600 2    60   ~ 0
 RXD5
-Text Label 6550 6950 2    60   ~ 0
+Text Label 6600 6700 2    60   ~ 0
 RXD6
-Text Label 6550 7050 2    60   ~ 0
+Text Label 6600 6800 2    60   ~ 0
 RXD7
-Text Label 6550 7150 2    60   ~ 0
+Text Label 6600 6900 2    60   ~ 0
 RXD8
-Text Label 6550 7250 2    60   ~ 0
+Text Label 6600 7000 2    60   ~ 0
 RXD9
-Text Label 6550 7350 2    60   ~ 0
+Text Label 6600 7100 2    60   ~ 0
 RXD10
-Text Label 6550 7450 2    60   ~ 0
+Text Label 6600 7200 2    60   ~ 0
 RXD11
 Wire Wire Line
-	6550 6350 6300 6350
+	6600 6100 6350 6100
 Wire Wire Line
-	6550 6450 6300 6450
+	6600 6200 6350 6200
 Wire Wire Line
-	6550 6550 6300 6550
+	6600 6300 6350 6300
 Wire Wire Line
-	6550 6650 6300 6650
+	6600 6400 6350 6400
 Wire Wire Line
-	6550 6750 6300 6750
+	6600 6500 6350 6500
 Wire Wire Line
-	6550 6850 6300 6850
+	6600 6600 6350 6600
 Wire Wire Line
-	6550 6950 6300 6950
+	6600 6700 6350 6700
 Wire Wire Line
-	6550 7050 6300 7050
+	6600 6800 6350 6800
 Wire Wire Line
-	6550 7150 6300 7150
+	6600 6900 6350 6900
 Wire Wire Line
-	6550 7250 6300 7250
+	6600 7000 6350 7000
 Wire Wire Line
-	6550 7350 6300 7350
+	6600 7100 6350 7100
 Wire Wire Line
-	6550 7450 6300 7450
+	6600 7200 6350 7200
 Wire Wire Line
-	6500 6050 6300 6050
+	6550 5800 6350 5800
 $Comp
 L LMS6002DR2 U3
 U 2 1 59250859
@@ -804,4 +804,78 @@ Wire Wire Line
 	8850 3900 9100 3900
 Wire Wire Line
 	8850 4000 9100 4000
+$Comp
+L LED D4
+U 1 1 5938F77D
+P 4400 6000
+F 0 "D4" H 4400 6100 50  0000 C CNN
+F 1 "LED" H 4400 5900 50  0000 C CNN
+F 2 "" H 4400 6000 50  0001 C CNN
+F 3 "" H 4400 6000 50  0001 C CNN
+	1    4400 6000
+	1    0    0    -1  
+$EndComp
+$Comp
+L LED D3
+U 1 1 5938F8CC
+P 4400 5700
+F 0 "D3" H 4400 5800 50  0000 C CNN
+F 1 "LED" H 4400 5600 50  0000 C CNN
+F 2 "" H 4400 5700 50  0001 C CNN
+F 3 "" H 4400 5700 50  0001 C CNN
+	1    4400 5700
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R38
+U 1 1 5938F9AA
+P 4850 5700
+F 0 "R38" V 4930 5700 50  0000 C CNN
+F 1 "820" V 4850 5700 50  0000 C CNN
+F 2 "" V 4780 5700 50  0001 C CNN
+F 3 "" H 4850 5700 50  0001 C CNN
+	1    4850 5700
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R R39
+U 1 1 5938F9FB
+P 4850 6000
+F 0 "R39" V 4930 6000 50  0000 C CNN
+F 1 "820" V 4850 6000 50  0000 C CNN
+F 2 "" V 4780 6000 50  0001 C CNN
+F 3 "" H 4850 6000 50  0001 C CNN
+	1    4850 6000
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	5150 5700 5000 5700
+Wire Wire Line
+	5000 6000 5150 6000
+Wire Wire Line
+	4700 6000 4550 6000
+Wire Wire Line
+	4700 5700 4550 5700
+$Comp
+L GNDD #PWR039
+U 1 1 5938FEB2
+P 4050 6050
+F 0 "#PWR039" H 4050 5800 50  0001 C CNN
+F 1 "GNDD" H 4050 5900 50  0000 C CNN
+F 2 "" H 4050 6050 50  0001 C CNN
+F 3 "" H 4050 6050 50  0001 C CNN
+	1    4050 6050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4250 6000 4050 6000
+Wire Wire Line
+	4050 5700 4050 6050
+Wire Wire Line
+	4250 5700 4050 5700
+Connection ~ 4050 6000
+Text Label 5000 5050 2    60   ~ 0
+~GSR
+Wire Wire Line
+	5150 5050 5000 5050
 $EndSCHEMATC
