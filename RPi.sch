@@ -933,8 +933,6 @@ F 3 "" H 4500 5800 50  0000 C CNN
 $EndComp
 Wire Wire Line
 	5150 5800 4500 5800
-Text Label 5050 5800 2    60   ~ 0
-VIRT_IO
 Wire Wire Line
 	5150 6300 5100 6300
 $EndSCHEMATC

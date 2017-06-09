@@ -572,6 +572,284 @@ F 3 "" H 1700 2450 50  0000 C CNN
 	1    1700 2450
 	1    0    0    -1  
 $EndComp
+$Comp
+L GNDD #PWR078
+U 1 1 58A3F51F
+P 1650 7050
+F 0 "#PWR078" H 1650 6800 50  0001 C CNN
+F 1 "GNDD" H 1650 6900 50  0000 C CNN
+F 2 "" H 1650 7050 50  0000 C CNN
+F 3 "" H 1650 7050 50  0000 C CNN
+	1    1650 7050
+	0    1    1    0   
+$EndComp
+Text GLabel 4800 900  0    60   BiDi ~ 0
+FT_D[0..31]
+Text GLabel 3350 2350 0    60   BiDi ~ 0
+FT_GPIO1
+$Comp
+L ECP5 U4
+U 4 1 58A94943
+P 6650 2700
+F 0 "U4" H 7050 2650 60  0000 C CNN
+F 1 "ECP5" H 6750 2650 60  0000 C CNN
+F 2 "sdr-foots:ECP5_381" H 5100 3250 60  0001 C CNN
+F 3 "" H 5100 3250 60  0001 C CNN
+	4    6650 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L ECP5 U4
+U 5 1 58A949D2
+P 6700 5100
+F 0 "U4" H 7100 5050 60  0000 C CNN
+F 1 "ECP5" H 6800 5050 60  0000 C CNN
+F 2 "sdr-foots:ECP5_381" H 5150 5650 60  0001 C CNN
+F 3 "" H 5150 5650 60  0001 C CNN
+	5    6700 5100
+	1    0    0    -1  
+$EndComp
+Text Label 7850 4800 0    60   ~ 0
+FT_CLK
+Text Label 4750 1300 0    60   ~ 0
+FT_CLK
+Text GLabel 7800 1400 2    60   Output ~ 0
+CLK0
+Text Label 6100 4800 0    60   ~ 0
+FT_D16
+$Comp
+L R R27
+U 1 1 58ABB2DB
+P 4500 6450
+F 0 "R27" V 4580 6450 50  0000 C CNN
+F 1 "1k" V 4500 6450 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" V 4430 6450 50  0001 C CNN
+F 3 "" H 4500 6450 50  0000 C CNN
+	1    4500 6450
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R28
+U 1 1 58ABB360
+P 4500 7050
+F 0 "R28" V 4580 7050 50  0000 C CNN
+F 1 "10k" V 4500 7050 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" V 4430 7050 50  0001 C CNN
+F 3 "" H 4500 7050 50  0000 C CNN
+	1    4500 7050
+	1    0    0    -1  
+$EndComp
+Text GLabel 4350 6150 0    60   Input ~ 0
+RPI_CNTD
+Text GLabel 4350 6750 0    60   Input ~ 0
+~FT_OE
+$Comp
+L GNDD #PWR079
+U 1 1 58ABB46B
+P 4500 7500
+F 0 "#PWR079" H 4500 7250 50  0001 C CNN
+F 1 "GNDD" H 4500 7350 50  0000 C CNN
+F 2 "" H 4500 7500 50  0000 C CNN
+F 3 "" H 4500 7500 50  0000 C CNN
+	1    4500 7500
+	1    0    0    -1  
+$EndComp
+Text Notes 4700 7550 0    60   ~ 0
+The goal of these two resistors is to set ~OE~\ninput of FT601 before FPGA is configured.\nIf there is no Paspberri Pi board connected\nto this board, then this input is tied to 0 via\n10k resistor. In this case FT601 will be in\noutput mode and will be able to work as the\ndevice which configures FPGA via emulation\nof SPI. If we have Raspberri Pi connected then \nresistor devider will set ~OE~ voltage to\n3V3*10/11 which is treated as 1 by Ft601 and\nit will not drive the bus and will let Raspberry\nPi to configure FPGA via its HW SPI.\nThe purpose of pulling down ~FT_RD~ is the \nsame - to allow Ft601 to drive the bus while \nFPGA is not configured yet.
+Text GLabel 3950 7000 0    60   Input ~ 0
+~FT_RD
+$Comp
+L R R26
+U 1 1 58ABBE51
+P 4100 7200
+F 0 "R26" V 4180 7200 50  0000 C CNN
+F 1 "10k" V 4100 7200 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" V 4030 7200 50  0001 C CNN
+F 3 "" H 4100 7200 50  0000 C CNN
+	1    4100 7200
+	1    0    0    -1  
+$EndComp
+Text GLabel 6300 2150 0    60   Input ~ 0
+CLK2
+Text GLabel 7900 2150 2    60   Input ~ 0
+CLK1
+Text Label 7750 2500 0    60   ~ 0
+FT_D31
+Text Label 6100 4900 0    60   ~ 0
+FT_D17
+Text Label 6200 3800 0    60   ~ 0
+FT_D18
+Text Label 7750 3800 0    60   ~ 0
+FT_D19
+Text Label 7750 2300 0    60   ~ 0
+FT_D20
+Text Label 6100 2300 0    60   ~ 0
+FT_D21
+Text Label 7750 1300 0    60   ~ 0
+FT_D22
+Text Label 6100 1300 0    60   ~ 0
+FT_D23
+Text Label 7750 1700 0    60   ~ 0
+FT_D24
+Text Label 7750 1800 0    60   ~ 0
+FT_D25
+Text Label 7750 2600 0    60   ~ 0
+FT_D26
+Text Label 6100 1800 0    60   ~ 0
+FT_D27
+Text Label 7750 1600 0    60   ~ 0
+FT_D28
+Text Label 7750 1500 0    60   ~ 0
+FT_D29
+Text Label 6100 2600 0    60   ~ 0
+FT_D30
+Entry Wire Line
+	5950 1200 6050 1300
+Entry Wire Line
+	5950 1700 6050 1800
+Entry Wire Line
+	5950 2200 6050 2300
+Entry Wire Line
+	5950 2500 6050 2600
+Entry Wire Line
+	8100 1300 8200 1200
+Entry Wire Line
+	8100 1500 8200 1400
+Entry Wire Line
+	8100 1600 8200 1500
+Entry Wire Line
+	8100 2300 8200 2200
+Entry Wire Line
+	8100 2500 8200 2400
+Entry Wire Line
+	8100 2600 8200 2500
+Entry Wire Line
+	8100 3800 8200 3700
+Entry Wire Line
+	5950 3700 6050 3800
+Entry Wire Line
+	5950 4800 6050 4900
+Entry Wire Line
+	5950 4700 6050 4800
+Entry Wire Line
+	8100 1800 8200 1700
+Entry Wire Line
+	8100 1700 8200 1600
+Text Label 6100 1600 0    60   ~ 0
+~FT_WR
+Text Label 3150 1750 0    60   ~ 0
+~FT_TXE
+Text Label 3150 1850 0    60   ~ 0
+~FT_RXF
+Text Label 3150 1950 0    60   ~ 0
+~FT_WR
+Text Label 3150 2050 0    60   ~ 0
+~FT_RD
+Text Label 3150 2150 0    60   ~ 0
+~FT_OE
+Text Label 6100 2500 0    60   ~ 0
+FT_BE0
+Text Label 6100 1500 0    60   ~ 0
+FT_BE1
+Text Label 7750 2400 0    60   ~ 0
+FT_BE2
+Text Label 6100 2400 0    60   ~ 0
+FT_BE3
+Text Label 6100 2100 0    60   ~ 0
+~FT_OE
+Text Label 6100 1700 0    60   ~ 0
+~FT_RD
+Text Label 7750 3900 0    60   ~ 0
+FT_D14
+Text Label 7750 4400 0    60   ~ 0
+FT_D15
+Text Label 6100 4000 0    60   ~ 0
+FT_D13
+Entry Wire Line
+	8100 3900 8200 3800
+Entry Wire Line
+	8100 4400 8200 4300
+Entry Wire Line
+	5950 3900 6050 4000
+Text Label 6100 5000 0    60   ~ 0
+FT_D12
+Text Label 7750 4000 0    60   ~ 0
+FT_D11
+Text Label 7750 4200 0    60   ~ 0
+FT_D6
+Text Label 7750 4100 0    60   ~ 0
+FT_D7
+Text Label 6100 4200 0    60   ~ 0
+FT_D8
+Text Label 6100 4100 0    60   ~ 0
+FT_D9
+Text Label 7750 5000 0    60   ~ 0
+FT_D10
+Entry Wire Line
+	5950 4000 6050 4100
+Entry Wire Line
+	5950 4900 6050 5000
+Entry Wire Line
+	8100 5000 8200 4900
+Entry Wire Line
+	8100 4000 8200 3900
+Entry Wire Line
+	8100 4100 8200 4000
+Entry Wire Line
+	5950 4100 6050 4200
+Entry Wire Line
+	8100 4200 8200 4100
+NoConn ~ 7700 3500
+NoConn ~ 6500 3700
+NoConn ~ 7700 4500
+NoConn ~ 6500 4700
+NoConn ~ 7700 3700
+NoConn ~ 7700 4700
+Text Label 1150 6700 0    60   ~ 0
+I2C_SCL
+Text Label 7750 1900 0    60   ~ 0
+I2C_SCL
+Text Label 7750 3600 0    60   ~ 0
+RPI_D13
+Text GLabel 9950 6200 0    60   BiDi ~ 0
+RPI_D[0..17]
+Entry Wire Line
+	10100 6200 10200 6100
+Text Label 10250 6100 0    60   ~ 0
+RPI_D[0..17]
+Entry Wire Line
+	8100 3600 8200 3500
+Text GLabel 9950 5750 0    60   BiDi ~ 0
+RPI_A[0..5]
+Entry Wire Line
+	10100 5750 10200 5650
+Text Label 10250 5650 0    60   ~ 0
+RPI_A[0..5]
+Text Label 6100 4500 0    60   ~ 0
+RPI_A5
+Text GLabel 6450 3600 0    60   Input ~ 0
+~RPI_OE
+Text Label 6100 1100 0    60   ~ 0
+~FT_TXE
+Text Label 6100 1400 0    60   ~ 0
+~FT_RXF
+Text Label 3150 2250 0    60   ~ 0
+FT_GPIO0
+Text Label 6050 1900 0    60   ~ 0
+FT_GPIO0
+Text GLabel 2150 6600 0    60   Input ~ 0
+I2C_SDA
+$Comp
+L +3V3 #PWR?
+U 1 1 593AB510
+P 6050 3900
+F 0 "#PWR?" H 6050 3750 50  0001 C CNN
+F 1 "+3V3" H 6050 4040 50  0000 C CNN
+F 2 "" H 6050 3900 50  0001 C CNN
+F 3 "" H 6050 3900 50  0001 C CNN
+	1    6050 3900
+	1    0    0    -1  
+$EndComp
 Wire Wire Line
 	1550 3150 3500 3150
 Wire Wire Line
@@ -802,98 +1080,16 @@ Wire Wire Line
 	1600 6200 1600 6350
 Wire Wire Line
 	1050 6200 1050 6850
-$Comp
-L GNDD #PWR078
-U 1 1 58A3F51F
-P 1650 7050
-F 0 "#PWR078" H 1650 6800 50  0001 C CNN
-F 1 "GNDD" H 1650 6900 50  0000 C CNN
-F 2 "" H 1650 7050 50  0000 C CNN
-F 3 "" H 1650 7050 50  0000 C CNN
-	1    1650 7050
-	0    1    1    0   
-$EndComp
 Wire Wire Line
 	1050 7150 1050 7300
-Text GLabel 4800 900  0    60   BiDi ~ 0
-FT_D[0..31]
-Text GLabel 3350 2350 0    60   BiDi ~ 0
-FT_GPIO1
-$Comp
-L ECP5 U4
-U 4 1 58A94943
-P 6650 2700
-F 0 "U4" H 7050 2650 60  0000 C CNN
-F 1 "ECP5" H 6750 2650 60  0000 C CNN
-F 2 "sdr-foots:ECP5_381" H 5100 3250 60  0001 C CNN
-F 3 "" H 5100 3250 60  0001 C CNN
-	4    6650 2700
-	1    0    0    -1  
-$EndComp
-$Comp
-L ECP5 U4
-U 5 1 58A949D2
-P 6700 5100
-F 0 "U4" H 7100 5050 60  0000 C CNN
-F 1 "ECP5" H 6800 5050 60  0000 C CNN
-F 2 "sdr-foots:ECP5_381" H 5150 5650 60  0001 C CNN
-F 3 "" H 5150 5650 60  0001 C CNN
-	5    6700 5100
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	7650 1400 7800 1400
-Text Label 7850 4800 0    60   ~ 0
-FT_CLK
-Text Label 4750 1300 0    60   ~ 0
-FT_CLK
 Wire Wire Line
 	4750 1300 4650 1300
 Wire Wire Line
 	7850 4800 7700 4800
-Text GLabel 7800 1400 2    60   Output ~ 0
-CLK0
-Text Label 6100 4800 0    60   ~ 0
-FT_D16
 Wire Wire Line
 	6050 4800 6500 4800
-$Comp
-L R R27
-U 1 1 58ABB2DB
-P 4500 6450
-F 0 "R27" V 4580 6450 50  0000 C CNN
-F 1 "1k" V 4500 6450 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" V 4430 6450 50  0001 C CNN
-F 3 "" H 4500 6450 50  0000 C CNN
-	1    4500 6450
-	1    0    0    -1  
-$EndComp
-$Comp
-L R R28
-U 1 1 58ABB360
-P 4500 7050
-F 0 "R28" V 4580 7050 50  0000 C CNN
-F 1 "10k" V 4500 7050 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" V 4430 7050 50  0001 C CNN
-F 3 "" H 4500 7050 50  0000 C CNN
-	1    4500 7050
-	1    0    0    -1  
-$EndComp
-Text GLabel 4350 6150 0    60   Input ~ 0
-RPI_CNTD
-Text GLabel 4350 6750 0    60   Input ~ 0
-~FT_OE
-$Comp
-L GNDD #PWR079
-U 1 1 58ABB46B
-P 4500 7500
-F 0 "#PWR079" H 4500 7250 50  0001 C CNN
-F 1 "GNDD" H 4500 7350 50  0000 C CNN
-F 2 "" H 4500 7500 50  0000 C CNN
-F 3 "" H 4500 7500 50  0000 C CNN
-	1    4500 7500
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	4500 7200 4500 7500
 Wire Wire Line
@@ -905,21 +1101,6 @@ Wire Wire Line
 Wire Wire Line
 	4350 6750 4500 6750
 Connection ~ 4500 6750
-Text Notes 4700 7550 0    60   ~ 0
-The goal of these two resistors is to set ~OE~\ninput of FT601 before FPGA is configured.\nIf there is no Paspberri Pi board connected\nto this board, then this input is tied to 0 via\n10k resistor. In this case FT601 will be in\noutput mode and will be able to work as the\ndevice which configures FPGA via emulation\nof SPI. If we have Raspberri Pi connected then \nresistor devider will set ~OE~ voltage to\n3V3*10/11 which is treated as 1 by Ft601 and\nit will not drive the bus and will let Raspberry\nPi to configure FPGA via its HW SPI.\nThe purpose of pulling down ~FT_RD~ is the \nsame - to allow Ft601 to drive the bus while \nFPGA is not configured yet.
-Text GLabel 3950 7000 0    60   Input ~ 0
-~FT_RD
-$Comp
-L R R26
-U 1 1 58ABBE51
-P 4100 7200
-F 0 "R26" V 4180 7200 50  0000 C CNN
-F 1 "10k" V 4100 7200 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" V 4030 7200 50  0001 C CNN
-F 3 "" H 4100 7200 50  0000 C CNN
-	1    4100 7200
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	4100 7350 4100 7400
 Wire Wire Line
@@ -929,10 +1110,6 @@ Wire Wire Line
 	4100 7050 4100 7000
 Wire Wire Line
 	4100 7000 3950 7000
-Text GLabel 6300 2150 0    60   Input ~ 0
-CLK2
-Text GLabel 7900 2150 2    60   Input ~ 0
-CLK1
 Wire Wire Line
 	1050 6200 2300 6200
 Wire Wire Line
@@ -946,44 +1123,6 @@ Wire Bus Line
 	5950 800  5950 5200
 Wire Bus Line
 	8200 800  8200 5200
-Text Label 7750 2500 0    60   ~ 0
-FT_D31
-Text Label 6100 4900 0    60   ~ 0
-FT_D17
-Text Label 6100 3800 0    60   ~ 0
-FT_D18
-Text Label 7750 3800 0    60   ~ 0
-FT_D19
-Text Label 7750 2300 0    60   ~ 0
-FT_D20
-Text Label 6100 2300 0    60   ~ 0
-FT_D21
-Text Label 7750 1300 0    60   ~ 0
-FT_D22
-Text Label 6100 1300 0    60   ~ 0
-FT_D23
-Text Label 7750 1700 0    60   ~ 0
-FT_D24
-Text Label 7750 1800 0    60   ~ 0
-FT_D25
-Text Label 7750 2600 0    60   ~ 0
-FT_D26
-Text Label 6100 1800 0    60   ~ 0
-FT_D27
-Text Label 7750 1600 0    60   ~ 0
-FT_D28
-Text Label 7750 1500 0    60   ~ 0
-FT_D29
-Text Label 6100 2600 0    60   ~ 0
-FT_D30
-Entry Wire Line
-	5950 1200 6050 1300
-Entry Wire Line
-	5950 1700 6050 1800
-Entry Wire Line
-	5950 2200 6050 2300
-Entry Wire Line
-	5950 2500 6050 2600
 Wire Wire Line
 	6450 1300 6050 1300
 Wire Wire Line
@@ -992,18 +1131,6 @@ Wire Wire Line
 	6050 2300 6450 2300
 Wire Wire Line
 	6050 2600 6450 2600
-Entry Wire Line
-	8100 1300 8200 1200
-Entry Wire Line
-	8100 1500 8200 1400
-Entry Wire Line
-	8100 1600 8200 1500
-Entry Wire Line
-	8100 2300 8200 2200
-Entry Wire Line
-	8100 2500 8200 2400
-Entry Wire Line
-	8100 2600 8200 2500
 Wire Wire Line
 	7650 1300 8100 1300
 Wire Wire Line
@@ -1016,104 +1143,36 @@ Wire Wire Line
 	7650 2500 8100 2500
 Wire Wire Line
 	8100 2600 7650 2600
-Entry Wire Line
-	8100 3800 8200 3700
 Wire Wire Line
 	8100 3800 7700 3800
-Entry Wire Line
-	5950 3700 6050 3800
-Entry Wire Line
-	5950 4800 6050 4900
 Wire Wire Line
 	6500 3800 6050 3800
 Wire Wire Line
 	6050 4900 6500 4900
-Entry Wire Line
-	5950 4700 6050 4800
 Wire Wire Line
 	7650 1800 8100 1800
-Entry Wire Line
-	8100 1800 8200 1700
-Entry Wire Line
-	8100 1700 8200 1600
 Wire Wire Line
 	7650 1700 8100 1700
-Text Label 6100 1600 0    60   ~ 0
-~FT_WR
 Wire Wire Line
 	6100 1600 6450 1600
-Text Label 3150 1750 0    60   ~ 0
-~FT_TXE
-Text Label 3150 1850 0    60   ~ 0
-~FT_RXF
-Text Label 3150 1950 0    60   ~ 0
-~FT_WR
-Text Label 3150 2050 0    60   ~ 0
-~FT_RD
-Text Label 3150 2150 0    60   ~ 0
-~FT_OE
-Text Label 6100 2500 0    60   ~ 0
-FT_BE0
 Wire Wire Line
 	6100 2500 6450 2500
-Text Label 6100 1500 0    60   ~ 0
-FT_BE1
 Wire Wire Line
 	6100 1500 6450 1500
-Text Label 7750 2400 0    60   ~ 0
-FT_BE2
 Wire Wire Line
 	7750 2400 7650 2400
-Text Label 6100 2400 0    60   ~ 0
-FT_BE3
 Wire Wire Line
 	6450 2400 6100 2400
-Text Label 6100 2100 0    60   ~ 0
-~FT_OE
 Wire Wire Line
 	6450 1700 6100 1700
-Text Label 6100 1700 0    60   ~ 0
-~FT_RD
 Wire Wire Line
 	6450 2100 6100 2100
-Text Label 7750 3900 0    60   ~ 0
-FT_D14
-Text Label 7750 4400 0    60   ~ 0
-FT_D15
-Text Label 6100 4000 0    60   ~ 0
-FT_D13
 Wire Wire Line
 	7700 3900 8100 3900
-Entry Wire Line
-	8100 3900 8200 3800
-Entry Wire Line
-	8100 4400 8200 4300
-Entry Wire Line
-	5950 3900 6050 4000
 Wire Wire Line
 	7700 4400 8100 4400
 Wire Wire Line
 	6050 4000 6500 4000
-Text Label 6100 5000 0    60   ~ 0
-FT_D12
-Text Label 7750 4000 0    60   ~ 0
-FT_D11
-Text Label 7750 4200 0    60   ~ 0
-FT_D6
-Text Label 7750 4100 0    60   ~ 0
-FT_D7
-Text Label 6100 4200 0    60   ~ 0
-FT_D8
-Text Label 6100 4100 0    60   ~ 0
-FT_D9
-Text Label 7750 5000 0    60   ~ 0
-FT_D10
-Entry Wire Line
-	5950 4000 6050 4100
-Entry Wire Line
-	5950 4900 6050 5000
-Entry Wire Line
-	8100 5000 8200 4900
 Wire Wire Line
 	6050 4100 6500 4100
 Wire Wire Line
@@ -1122,30 +1181,12 @@ Wire Wire Line
 	7700 5000 8100 5000
 Wire Wire Line
 	7700 4000 8100 4000
-Entry Wire Line
-	8100 4000 8200 3900
-Entry Wire Line
-	8100 4100 8200 4000
-Entry Wire Line
-	5950 4100 6050 4200
 Wire Wire Line
 	7700 4100 8100 4100
 Wire Wire Line
 	6500 4200 6050 4200
-Entry Wire Line
-	8100 4200 8200 4100
 Wire Wire Line
 	7700 4200 8100 4200
-NoConn ~ 7700 3500
-NoConn ~ 6500 3700
-NoConn ~ 7700 4500
-NoConn ~ 6500 4700
-NoConn ~ 7700 3700
-NoConn ~ 7700 4700
-Text Label 1150 6700 0    60   ~ 0
-I2C_SCL
-Text Label 7750 1900 0    60   ~ 0
-I2C_SCL
 Wire Wire Line
 	6100 1100 6450 1100
 Wire Wire Line
@@ -1160,56 +1201,28 @@ Wire Wire Line
 	6400 2150 6400 2200
 Wire Wire Line
 	6400 2200 6450 2200
-Text Label 7750 3600 0    60   ~ 0
-RPI_D13
-Text GLabel 9950 6200 0    60   BiDi ~ 0
-RPI_D[0..17]
-Entry Wire Line
-	10100 6200 10200 6100
-Text Label 10250 6100 0    60   ~ 0
-RPI_D[0..17]
 Wire Wire Line
 	10100 6200 9950 6200
 Wire Bus Line
 	10200 6100 10600 6100
 Wire Wire Line
 	7700 3600 8100 3600
-Entry Wire Line
-	8100 3600 8200 3500
-Text GLabel 9950 5750 0    60   BiDi ~ 0
-RPI_A[0..5]
-Entry Wire Line
-	10100 5750 10200 5650
-Text Label 10250 5650 0    60   ~ 0
-RPI_A[0..5]
 Wire Wire Line
 	10100 5750 9950 5750
 Wire Bus Line
 	10200 5650 10600 5650
-Text Label 6100 4500 0    60   ~ 0
-RPI_A5
 Wire Wire Line
 	6100 4500 6500 4500
-Text GLabel 6450 3600 0    60   Input ~ 0
-~RPI_OE
 Wire Wire Line
 	6500 3600 6450 3600
 Wire Wire Line
 	7750 1900 7650 1900
-Text Label 6100 1100 0    60   ~ 0
-~FT_TXE
-Text Label 6100 1400 0    60   ~ 0
-~FT_RXF
 Wire Wire Line
 	6450 1400 6100 1400
-Text Label 3150 2250 0    60   ~ 0
-FT_GPIO0
 Wire Wire Line
 	2750 2250 3500 2250
-Text Label 6050 1900 0    60   ~ 0
-FT_GPIO0
 Wire Wire Line
 	6450 1900 6050 1900
-Text GLabel 2150 6600 0    60   Input ~ 0
-I2C_SDA
+Wire Wire Line
+	6500 3900 6050 3900
 $EndSCHEMATC
