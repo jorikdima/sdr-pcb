@@ -671,4 +671,35 @@ Wire Wire Line
 Wire Wire Line
 	3550 3850 3700 3850
 Connection ~ 3250 4150
+Text GLabel 5300 2650 2    60   Input ~ 0
+TMS
+Text GLabel 5300 2450 2    60   Input ~ 0
+TDI
+Text GLabel 5300 2350 2    60   Input ~ 0
+TCK
+Text GLabel 5300 2550 2    60   Input ~ 0
+TDO
+Wire Wire Line
+	5300 2350 5100 2350
+Wire Wire Line
+	5300 2450 5100 2450
+Wire Wire Line
+	5300 2550 5100 2550
+Wire Wire Line
+	5300 2650 5100 2650
+NoConn ~ 5100 2750
+NoConn ~ 5100 2850
+NoConn ~ 5100 2950
+NoConn ~ 5100 3050
+NoConn ~ 5100 3200
+NoConn ~ 5100 3300
+NoConn ~ 5100 3400
+NoConn ~ 5100 3500
+NoConn ~ 5100 3600
+NoConn ~ 5100 3700
+NoConn ~ 5100 3800
+NoConn ~ 5100 3900
+NoConn ~ 5100 4000
+NoConn ~ 5100 4100
+NoConn ~ 1500 2350
 $EndSCHEMATC
