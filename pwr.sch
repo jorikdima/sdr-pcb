@@ -1205,15 +1205,15 @@ $EndComp
 $Comp
 L R R5
 U 1 1 589F2964
-P 6600 1250
-F 0 "R5" V 6680 1250 50  0000 C CNN
-F 1 "4.7k" V 6600 1250 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" V 6530 1250 50  0001 C CNN
-F 3 "" H 6600 1250 50  0000 C CNN
-	1    6600 1250
+P 6600 1350
+F 0 "R5" V 6680 1350 50  0000 C CNN
+F 1 "4.7k" V 6600 1350 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" V 6530 1350 50  0001 C CNN
+F 3 "" H 6600 1350 50  0000 C CNN
+	1    6600 1350
 	0    1    1    0   
 $EndComp
-Text Label 6850 1250 0    60   ~ 0
+Text Label 7150 1250 0    60   ~ 0
 TMS
 Text Label 6850 1650 0    60   ~ 0
 ~INIT
@@ -1221,19 +1221,19 @@ Text Label 6850 1750 0    60   ~ 0
 DONE
 Text Label 6850 1850 0    60   ~ 0
 ~PRG
-Text Label 6850 1150 0    60   ~ 0
+Text Label 7150 1350 0    60   ~ 0
 TDI
-Text Label 6850 1550 0    60   ~ 0
+Text Label 7150 1550 0    60   ~ 0
 TDO
 $Comp
 L R R4
 U 1 1 589F04F1
-P 6600 1150
-F 0 "R4" V 6680 1150 50  0000 C CNN
-F 1 "4.7k" V 6600 1150 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" V 6530 1150 50  0001 C CNN
-F 3 "" H 6600 1150 50  0000 C CNN
-	1    6600 1150
+P 6600 1250
+F 0 "R4" V 6680 1250 50  0000 C CNN
+F 1 "4.7k" V 6600 1250 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" V 6530 1250 50  0001 C CNN
+F 3 "" H 6600 1250 50  0000 C CNN
+	1    6600 1250
 	0    -1   -1   0   
 $EndComp
 $Comp
@@ -1681,12 +1681,7 @@ Wire Wire Line
 Wire Wire Line
 	6300 1450 7300 1450
 Wire Wire Line
-	6200 1400 6200 1350
-Wire Wire Line
-	6200 1350 7300 1350
-Connection ~ 6400 1150
-Wire Wire Line
-	6450 1150 6400 1150
+	6200 1150 6200 1400
 Connection ~ 6400 1250
 Wire Wire Line
 	6400 1250 6450 1250
@@ -1701,19 +1696,16 @@ Wire Wire Line
 Wire Wire Line
 	6750 1250 7300 1250
 Wire Wire Line
-	6750 1150 7300 1150
-Wire Wire Line
 	6850 1850 7300 1850
 Wire Wire Line
 	7300 1750 6850 1750
-Connection ~ 6200 1350
 Text Label 6600 2400 0    60   ~ 0
 TDI
 Text Label 6600 2600 0    60   ~ 0
 TDO
 Text Label 6600 2500 0    60   ~ 0
 TCK
-Text Label 6850 1350 0    60   ~ 0
+Text Label 7150 1150 0    60   ~ 0
 TCK
 Wire Wire Line
 	9850 950  9900 950 
@@ -1741,4 +1733,11 @@ Wire Wire Line
 	6900 2500 6600 2500
 Wire Wire Line
 	6900 2600 6600 2600
+Wire Wire Line
+	7300 1350 6750 1350
+Wire Wire Line
+	6200 1150 7300 1150
+Wire Wire Line
+	6450 1350 6400 1350
+Connection ~ 6400 1350
 $EndSCHEMATC
