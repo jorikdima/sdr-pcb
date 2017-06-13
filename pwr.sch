@@ -1021,7 +1021,7 @@ F 1 "Jumper" H 9150 4770 50  0000 C CNN
 F 2 "Pin_Headers:Pin_Header_Angled_1x02_Pitch2.54mm" H 9150 4850 50  0001 C CNN
 F 3 "" H 9150 4850 50  0001 C CNN
 	1    9150 4850
-	1    0    0    -1  
+	-1   0    0    -1  
 $EndComp
 $Comp
 L R R29
@@ -1194,13 +1194,13 @@ $EndComp
 $Comp
 L R R6
 U 1 1 589F2A11
-P 6200 1550
-F 0 "R6" V 6280 1550 50  0000 C CNN
-F 1 "4.7k" V 6200 1550 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" V 6130 1550 50  0001 C CNN
-F 3 "" H 6200 1550 50  0000 C CNN
-	1    6200 1550
-	-1   0    0    1   
+P 6950 1150
+F 0 "R6" V 7030 1150 50  0000 C CNN
+F 1 "4.7k" V 6950 1150 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" V 6880 1150 50  0001 C CNN
+F 3 "" H 6950 1150 50  0000 C CNN
+	1    6950 1150
+	0    -1   -1   0   
 $EndComp
 $Comp
 L R R5
@@ -1219,8 +1219,6 @@ Text Label 6850 1650 0    60   ~ 0
 ~INIT
 Text Label 6850 1750 0    60   ~ 0
 DONE
-Text Label 6850 1850 0    60   ~ 0
-~PRG
 Text Label 7150 1350 0    60   ~ 0
 TDI
 Text Label 7150 1550 0    60   ~ 0
@@ -1239,12 +1237,12 @@ $EndComp
 $Comp
 L GNDD #PWR038
 U 1 1 589F005F
-P 6200 1800
-F 0 "#PWR038" H 6200 1550 50  0001 C CNN
-F 1 "GNDD" H 6200 1650 50  0000 C CNN
-F 2 "" H 6200 1800 50  0000 C CNN
-F 3 "" H 6200 1800 50  0000 C CNN
-	1    6200 1800
+P 6200 1950
+F 0 "#PWR038" H 6200 1700 50  0001 C CNN
+F 1 "GNDD" H 6200 1800 50  0000 C CNN
+F 2 "" H 6200 1950 50  0000 C CNN
+F 3 "" H 6200 1950 50  0000 C CNN
+	1    6200 1950
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -1257,6 +1255,33 @@ F 2 "Resistors_SMD:R_0603" V 6530 1550 50  0001 C CNN
 F 3 "" H 6600 1550 50  0000 C CNN
 	1    6600 1550
 	0    1    1    0   
+$EndComp
+Text Label 6600 2400 0    60   ~ 0
+TDI
+Text Label 6600 2600 0    60   ~ 0
+TDO
+Text Label 6600 2500 0    60   ~ 0
+TCK
+Text GLabel 6900 2300 2    60   Input ~ 0
+TMS
+Text GLabel 6900 2400 2    60   Input ~ 0
+TDI
+Text GLabel 6900 2500 2    60   Input ~ 0
+TCK
+Text GLabel 6900 2600 2    60   Input ~ 0
+TDO
+Text Label 6600 2300 0    60   ~ 0
+TMS
+$Comp
+L Button SW1
+U 1 1 593F7568
+P 6650 1950
+F 0 "SW1" H 6650 1900 60  0000 C CNN
+F 1 "Button" H 6650 1800 60  0001 C CNN
+F 2 "sdr-foots:Switch_KMR2" H 7300 1750 60  0001 C CNN
+F 3 "" H 7300 1750 60  0001 C CNN
+	1    6650 1950
+	-1   0    0    -1  
 $EndComp
 Wire Wire Line
 	2750 1000 2750 1200
@@ -1671,17 +1696,8 @@ Wire Wire Line
 	4150 3350 4050 3350
 Wire Wire Line
 	4150 3800 4050 3800
-Connection ~ 6200 1750
 Wire Wire Line
-	6300 1750 6200 1750
-Wire Wire Line
-	6200 1700 6200 1800
-Wire Wire Line
-	6300 1450 6300 1750
-Wire Wire Line
-	6300 1450 7300 1450
-Wire Wire Line
-	6200 1150 6200 1400
+	6200 1150 6200 1950
 Connection ~ 6400 1250
 Wire Wire Line
 	6400 1250 6450 1250
@@ -1696,17 +1712,7 @@ Wire Wire Line
 Wire Wire Line
 	6750 1250 7300 1250
 Wire Wire Line
-	6850 1850 7300 1850
-Wire Wire Line
 	7300 1750 6850 1750
-Text Label 6600 2400 0    60   ~ 0
-TDI
-Text Label 6600 2600 0    60   ~ 0
-TDO
-Text Label 6600 2500 0    60   ~ 0
-TCK
-Text Label 7150 1150 0    60   ~ 0
-TCK
 Wire Wire Line
 	9850 950  9900 950 
 Wire Wire Line
@@ -1715,16 +1721,6 @@ Wire Wire Line
 	9850 1150 9900 1150
 Wire Wire Line
 	9850 1250 9900 1250
-Text GLabel 6900 2300 2    60   Input ~ 0
-TMS
-Text GLabel 6900 2400 2    60   Input ~ 0
-TDI
-Text GLabel 6900 2500 2    60   Input ~ 0
-TCK
-Text GLabel 6900 2600 2    60   Input ~ 0
-TDO
-Text Label 6600 2300 0    60   ~ 0
-TMS
 Wire Wire Line
 	6900 2300 6600 2300
 Wire Wire Line
@@ -1736,8 +1732,22 @@ Wire Wire Line
 Wire Wire Line
 	7300 1350 6750 1350
 Wire Wire Line
-	6200 1150 7300 1150
-Wire Wire Line
 	6450 1350 6400 1350
 Connection ~ 6400 1350
+Wire Wire Line
+	7300 1850 7000 1850
+Wire Wire Line
+	6200 1850 6350 1850
+Text Label 7050 1850 0    60   ~ 0
+~PRG
+Wire Wire Line
+	7300 1150 7100 1150
+Wire Wire Line
+	6800 1150 6200 1150
+Connection ~ 6200 1850
+Wire Wire Line
+	7300 1450 6200 1450
+Connection ~ 6200 1450
+Text Label 7150 1150 0    60   ~ 0
+TCK
 $EndSCHEMATC
