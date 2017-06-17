@@ -6,6 +6,7 @@
   (fp_text value TSLP-4-7 (at 0.125 1.2) (layer F.Fab)
     (effects (font (size 1 1) (thickness 0.15)))
   )
+  (fp_circle (center -0.2 0.25) (end -0.15 0.25) (layer F.SilkS) (width 0.1))
   (fp_line (start -0.175 -0.975) (end -0.175 0.225) (layer F.SilkS) (width 0.1))
   (fp_line (start 0.625 -0.975) (end -0.175 -0.975) (layer F.SilkS) (width 0.1))
   (fp_line (start 0.625 0.225) (end 0.625 -0.975) (layer F.SilkS) (width 0.1))
