@@ -1,4 +1,4 @@
-update=Fri 17 Mar 2017 09:46:29 PM PDT
+update=Sun 18 Jun 2017 10:05:38 PM PDT
 version=1
 last_client=kicad
 [pcbnew]
@@ -59,4 +59,3 @@ LibName27=atmel
 LibName28=contrib
 LibName29=valves
 LibName30=libs/sdr
-LibName31=libs/usb-type-c
